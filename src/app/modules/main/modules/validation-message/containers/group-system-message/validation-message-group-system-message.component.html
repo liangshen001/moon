@@ -1,0 +1,12 @@
+
+<app-validation-message-item [imageUrl]="user.imageUrl"
+                             [isSender]="isSender"
+                             [status]="groupSystemMessage.status"
+                             [user]="user"
+                             [time]="groupSystemMessage.submitTime"
+                             [group]="group"
+                             (close)="close()"
+                             (agree)="agree()"
+                             (ignore)="ignore()"
+                             (reject)="reject()"
+></app-validation-message-item>

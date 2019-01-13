@@ -1,0 +1,13 @@
+
+<app-home-grouping-row [menuItems]="menuItems"
+                       (openOrClose)="openOrClose()"
+                       (changeGrouping)="changeGroupGrouping($event)"
+                       (closeRenameGroupingInput)="closeRenameGroupGroupingInput($event)"
+                       [grouping]="groupGrouping"
+                       [itemDragging]="(dragging$ | async)"
+                       [groupingDraggable]="!groupGrouping.system"
+                       [groupingDragging]=""
+                       (groupingDragStart)="groupGroupingDragStart()"
+                       (groupingChangeSort)="groupGroupingChangeSort($event)" >
+    <app-home-group-row *ngFor="let userGroup of (userGroups$ | async)" [userGroup]="userGroup" ></app-home-group-row>
+</app-home-grouping-row>

@@ -1,0 +1,93 @@
+<div ngxElementResizable [resizeTop]="false" [resizeBottom]="false" [resizeLeft]="false"
+     style="width: 100%;height:100%;float: left;">
+  <ng-template #btnTemp>
+    <button class="skin-backgroud" (click)="openAppearanceSettingWin()"></button>
+  </ng-template>
+  <ngx-electron-window [showMiniBtn]="true" [showCloseBtn]="true" [background]="(userConfig$ | async)?.background"
+                       [btnTemp]="btnTemp">
+    <header class="drag">
+      <div class="user-info-container">
+        <img [attr.src]="(user$ | async)?.imageUrl" class="user-img" draggable="false">
+        <div style="float: left">
+          <span class="user-name">{{(user$ | async)?.name}}</span>
+          <button mat-icon-button class="online-status" [matMenuTriggerFor]="menu"
+                  ngSwitch="{{(user$ | async)?.onlineStatus}}">
+            <span class="offline" *ngSwitchCase="0"></span>
+            <span class="online" *ngSwitchCase="1"></span>
+            <span class="stealth" *ngSwitchCase="2"></span>
+            <span class="leave" *ngSwitchCase="3"></span>
+            <span class="busyness" *ngSwitchCase="4"></span>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="changeOnlineStatus(1)">
+              <span class="online online-status-menu-item"></span>
+              <span>我在线上</span>
+            </button>
+            <button mat-menu-item (click)="changeOnlineStatus(2)">
+              <span class="stealth online-status-menu-item"></span>
+              <span>隐身</span>
+            </button>
+            <button mat-menu-item (click)="changeOnlineStatus(3)">
+              <span class="leave online-status-menu-item"></span>
+              <span>离开</span>
+            </button>
+            <button mat-menu-item (click)="changeOnlineStatus(4)">
+              <span class="busyness online-status-menu-item"></span>
+              <span>忙碌</span>
+            </button>
+            <button mat-menu-item (click)="changeOnlineStatus(0)">
+              <span class="offline online-status-menu-item"></span>
+              <span>离线</span>
+            </button>
+          </mat-menu>
+        </div>
+        <div style="float: left">
+          <span class="saying-content" (click)="openSayingEdit()" *ngIf="!editingSaying">
+            <span *ngIf="(user$ | async)?.saying">{{(user$ | async)?.saying}}</span>
+            <span *ngIf="!(user$ | async)?.saying">编辑个人签名</span>
+          </span>
+          <span [hidden]="!editingSaying">
+            <input #sayingEditInput (blur)="editSaying()" [value]="(user$ | async)?.saying"/>
+          </span>
+        </div>
+      </div>
+      <div class="search-container">
+        <mat-icon class="search-icon">search</mat-icon>
+        <div [hidden]="isSearch" class="search-input-blur no-drag" indextab (click)="toSearch()">
+          <span>搜索</span>
+        </div>
+        <div [hidden]="!isSearch">
+          <mat-icon class="close-icon">close</mat-icon>
+          <input #searchInput [formControl]="searchControl" class="search-input-focus" type="text"
+                 (blur)="returnChatList()">
+        </div>
+      </div>
+    </header>
+      <div class="panel-content" [style.opacity]="(userConfig$ | async)?.opacity">
+          <div class="chat-list-content">
+              <router-outlet></router-outlet>
+          </div>
+          <footer>
+              <button mat-button (click)="isShowPopup = !isShowPopup">
+                  <!-- (blur)="isShowPopup = false" -->
+                  <mat-icon>menu</mat-icon>
+              </button>
+              <button mat-button (click)="openLookupWindow()">
+                  <mat-icon>add</mat-icon>
+              </button>
+          </footer>
+      </div>
+
+    <nav [hidden]="!isShowPopup">
+      <span class="switch-account" (click)="switchAccount()">切换账号</span>
+      <span class="exit-logon" (click)="logout()">退出登录</span>
+    </nav>
+  </ngx-electron-window>
+</div>
+
+<!--<div style="width: 70%;height:100%;float: left;">-->
+<!--<router-outlet name="aux"></router-outlet>-->
+<!--</div>-->
+<audio #shakeAudioElement [hidden]="true" src="./assets/audio/shake.mp3"></audio>
+<audio #msgAudioElement [hidden]="true" src="./assets/audio/msg.mp3"></audio>
+<audio #onlineAudioElement [hidden]="true" src="./assets/audio/online.mp3"></audio>

@@ -1,0 +1,11 @@
+
+<app-validation-message-item [addSourceType]="friendValidation.addSourceType"
+                             [isSender]="isApplicant"
+                             [status]="friendValidation.status"
+                             [user]="user"
+                             [time]="friendValidation.applyTime"
+                             (close)="close()"
+                             (agree)="agree()"
+                             (ignore)="ignore()"
+                             (reject)="reject()"
+></app-validation-message-item>

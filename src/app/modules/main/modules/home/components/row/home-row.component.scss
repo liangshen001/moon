@@ -1,0 +1,66 @@
+.row-container {
+  height: 54px;
+  padding: 5px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  float: left;
+  width: 100%;
+  outline: 0;
+  img {
+    float: left;
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+    margin-right: 5px;
+  }
+  .subtitle, .desc {
+    color: #7f7f7f;
+  }
+}
+
+.small-row {
+  height: 40px !important;
+  .name {
+    margin-top: 5px;
+  }
+  .desc {
+    display: none;
+  }
+  img {
+    height: 30px !important;
+    width: 30px !important;
+  }
+}
+
+.gray-img {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+}
+.draging {
+  position: relative;
+}
+
+
+@media screen and (min-width: 500px) {
+  .multiple-columns-tiles {
+    width: 50% !important;
+  }
+}
+@media screen and (min-width: 800px) {
+  .multiple-columns-tiles {
+    width: 33.333333% !important;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .multiple-columns-tiles {
+    width: 25% !important;
+  }
+}
+
+

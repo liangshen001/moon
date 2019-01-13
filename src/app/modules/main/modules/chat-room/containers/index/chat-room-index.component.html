@@ -1,0 +1,7 @@
+<ngx-electron-window [showMiniBtn]="true"
+                     [showCloseBtn]="true "
+                     [background]="(userConfig$ |async)?.background">
+    <div class="container" [style.opacity]="(userConfig$ |async)?.opacity">
+        <router-outlet></router-outlet>
+    </div>
+</ngx-electron-window>

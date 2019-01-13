@@ -1,0 +1,37 @@
+<mat-tab-group class="chat-type-container">
+    <mat-tab label="session">
+        <ng-template mat-tab-label>
+            <mat-icon>chat</mat-icon>
+        </ng-template>
+        <div class="chat-content" >
+            <app-home-conversation-row *ngFor="let conversation of conversations$ | async"
+                                       [conversation]="conversation"></app-home-conversation-row>
+        </div>
+    </mat-tab>
+    <mat-tab label="person">
+        <ng-template mat-tab-label>
+            <mat-icon>person</mat-icon>
+        </ng-template>
+        <div class="chat-content" ngxElectronContextMenu [menuItems]="friendGroupingMenuItems">
+            <app-home-friend-grouping-row *ngFor="let friendGrouping of friendGroupings$ | async"
+                                          [friendGrouping]="friendGrouping"></app-home-friend-grouping-row>
+        </div>
+    </mat-tab>
+    <mat-tab label="group">
+        <ng-template mat-tab-label>
+            <mat-icon>group</mat-icon>
+        </ng-template>
+        <div class="chat-content" ngxElectronContextMenu [menuItems]="groupGroupingMenuItems">
+            <app-home-group-grouping-row *ngFor="let groupGrouping of groupGrouping$ | async"
+                                         [groupGrouping]="groupGrouping"></app-home-group-grouping-row>
+        </div>
+    </mat-tab>
+    <mat-tab label="Tab 3">
+        <ng-template mat-tab-label>
+            <mat-icon>star</mat-icon>
+        </ng-template>
+        <div class="chat-content">
+            No content
+        </div>
+    </mat-tab>
+</mat-tab-group>

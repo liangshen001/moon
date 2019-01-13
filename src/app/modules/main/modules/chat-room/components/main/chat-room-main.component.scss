@@ -1,0 +1,176 @@
+:host {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.message-container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.emoji-mart-popup {
+  position: absolute;
+  top: 83px;
+  z-index: 99;
+  left: -2px;
+}
+
+.message-content {
+  width: 100%;
+  box-sizing: border-box;
+  flex: auto;
+  height: 0;
+}
+
+/************************************************************************/
+@font-face {
+  font-family: 'iconfont';  /* project id 351760 */
+  src: url('../../../../../../../assets/iconfont/iconfont.eot');
+  src: url('../../../../../../../assets/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../../../../../../../assets/iconfont/iconfont.woff') format('woff'),
+  url('../../../../../../../assets/iconfont/iconfont.ttf') format('truetype'),
+  url('../../../../../../../assets/iconfont/iconfont.svg#iconfont') format('svg');
+}
+
+.edit {
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .bar {
+    width: 100%;
+    height: 30px;
+    span {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      vertical-align: top;
+      display: inline-block;
+      position: relative;
+      background-image: url(../../../../../../../assets/images/chat_message_bar.png);
+      background-repeat: no-repeat;
+    }
+    .font {
+      background-position: 1px -1px;
+      &:hover {
+        background-position: 1px -30px;
+      }
+    }
+    .face {
+      background-position: -31px -1px;
+      &:hover {
+        background-position: -31px -30px;
+      }
+    }
+    .shake {
+      background-position: -59px -1px;
+      &:hover {
+        background-position: -59px -30px;
+      }
+    }
+    .det {
+      background-position: -86px  -1px;
+      &:hover {
+        background-position: -86px  -30px;
+      }
+    }
+    .img {
+      background-position: -115px -1px;
+      .add-file {
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index: 10;
+        opacity: 0;
+      }
+      &:hover {
+        background-position: -115px -30px;
+      }
+    }
+    .cut {
+      background-position: -146px  -1px;
+      &:hover {
+        background-position: -146px  -30px;
+      }
+    }
+    .muc {
+      font-family: 'iconfont', serif;
+      color: #666;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center;
+      background: transparent;
+      &:hover {
+        color: #5c9dcb;
+      }
+    }
+    .record {
+      width: 105px;
+      height: 30px;
+      cursor: pointer;
+      color: #999;
+      padding-left: 30px;
+      line-height: 30px;
+      float: right;
+      font-weight: inherit;
+      background-image: url(../../../../../../../assets/images/chat_message_bar.png);
+      background-repeat: no-repeat;
+      background-position: -183px -1px;
+      &:hover {
+        color: #888;
+        background-position: -183px -30px;
+      }
+    }
+  }
+  .textarea {
+    color: #666;
+    font-size: 14px;
+    line-height: 18px;
+    height: 58px;
+    max-height: 70px;
+    box-shadow: none;
+    border: none;
+    border: 0;
+    outline: 0;
+    cursor: text;
+    display: block;
+    word-wrap: break-word;
+    font-family: sans-serif;
+
+  }
+}
+
+.display-none {
+  display: none;
+}
+
+.message-input {
+  flex: auto;
+  height: 0;
+  cursor: default;
+  width: 100%;
+  overflow: auto;
+  padding-left: 5px;
+  box-sizing: border-box;
+}
+.send-btn-container {
+  height: 36px;
+
+  button {
+    color: #999;
+    float: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+
+
+

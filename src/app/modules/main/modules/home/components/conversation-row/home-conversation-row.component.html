@@ -1,0 +1,36 @@
+<div class="conversation-row-container"
+     (mouseenter)="isHiddenUnreadCount = true"
+     (mouseleave)="isHiddenUnreadCount = false"
+     ngxRow
+     rowGroupName="conversation"
+     ngxElectronContextMenu
+     [menuItems]="menuItems">
+    <span class="top-conversation" *ngIf="conversation.top"></span>
+    <span class="float-left">
+        <img [src]="imageUrl" [class.offline]="isOffline" draggable="false">
+    </span>
+    <div class="chatrow-info-content">
+        <span class="row-left-part">
+            <span class="block-span">
+                {{name}}
+            </span>
+            <span class="block-span">
+                <small>{{conversation.content}}</small>
+            </span>
+        </span>
+        <span class="row-right-part">
+            <small [hidden]="isHiddenUnreadCount && conversation.unreadCount">
+                {{conversation.sendTime | sendTime}}
+            </small>
+            <br>
+            <span class="unread-count" [matBadge]="conversation.unreadCount | omitCount"
+                  [matBadgeColor]="isIndifference ? 'primary' : 'warn'"
+                  [hidden]="isHiddenUnreadCount || !conversation.unreadCount"></span>
+            <span class="clear-unread-count"
+                  [hidden]="!isHiddenUnreadCount || !conversation.unreadCount">
+                <mat-icon (click)="clearUnreadCount()">visibility_off</mat-icon>
+            </span>
+        </span>
+
+    </div>
+</div>

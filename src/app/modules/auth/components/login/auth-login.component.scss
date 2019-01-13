@@ -1,0 +1,503 @@
+
+
+:host {
+  display: block;
+  width: 100%;
+  background: url(../../../../../assets/images/login-back.gif) no-repeat;
+  height: 100%;
+  background-size: 100% 100%;
+}
+form {
+  width: 100%;
+  mat-checkbox {
+    width: 50%;
+  }
+}
+.check-box-group {
+  position: relative;
+  display: flex;
+  top: -37px;
+  mat-checkbox {
+    flex: 1;
+  }
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.login-buttons-wrapper {
+  margin-top: -20px;
+}
+
+.login-buttons-wrapper button {
+  width: 100%;
+  background: #08a3dc;
+}
+
+.password-field {
+  top: -24px;
+
+}
+
+.login {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  width: 60%;
+  top: 32%;
+  position: absolute;
+}
+
+.user-image-wrapper {
+  width: 0;
+  top: 35%;
+  display: inline-block;
+  position: relative;
+  height: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10000px;
+  }
+  div {
+    text-align: center;
+  }
+}
+
+.mat-form-field {
+  width: 100%;
+  min-width: 200px;
+  font-size: 12px;
+}
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.loginError {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}
+
+.setting-page {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.00) 0%,
+          rgba(0, 0, 0, 0.00) 6%,
+          #ebf2f9 12%, #ebf2f9 90%,
+          #cde2f2 90%, #cde2f2 100%);
+}
+
+.btn {
+  width: 78px;
+  height: 28px;
+  background: url(../../../../../assets/images/setting_btn_normal.png) no-repeat;
+  background-size: 100% 100%;
+  border: none;
+  outline: none;
+  margin: 0;
+  &:focus {
+    background: url(../../../../../assets/images/setting_btn_hover.png) no-repeat;
+    background-size: 100% 100%;
+  }
+}
+
+.btn:hover, .btn:active {
+  background: url(../../../../../assets/images/setting_btn_hover.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+ul, form, input {
+  margin: 0;
+  padding: 0;
+  font-family: '微软雅黑', 'Times New Roman', Times, serif;
+}
+
+em, i {
+  font-style: normal;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+b {
+  font-weight: normal;
+}
+
+img {
+  border: none;
+  vertical-align: top;
+}
+
+body {
+  padding: 60px 35px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.login-main {
+  width: 435px;
+  height: 325px;
+  -webkit-box-shadow: 0 10px 10px rgb(29, 47, 47);
+  box-shadow: 0 10px 10px rgb(29, 47, 47);
+}
+
+.login-banner {
+  position: relative;
+  height: 180px;
+  width: 100%;
+  -webkit-app-region: drag;
+}
+
+#anitOut {
+  position: absolute;
+  z-index: -1;
+  canvas {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+}
+
+.logo-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: #ffffff;
+  font-size: 20px;
+  width: 183px;
+  height: 62px;
+  transform: translate(-50%, -50%);
+}
+
+.banner-opreate-bar {
+  -webkit-app-region: no-drag;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90px;
+  height: 30px;
+  ul {
+    width: 100%;
+    height: 100%;
+    li {
+      float: left;
+      width: 30px;
+      text-align: center;
+      cursor: pointer;
+      span {
+        color: #ffffff;
+      }
+    }
+    .close {
+      &:hover {
+        background: #d44027;
+      }
+    }
+    .option-minify {
+      &:hover {
+        background: #26aedf;
+      }
+    }
+  }
+}
+
+.login-body {
+  width: 100%;
+  background: #ebf2f9;
+  margin-top: 180px;
+  padding-top: 12px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  ul {
+    width: 100%;
+    height: 100%;
+    li {
+      float: left;
+      height: 100%;
+      position: relative;
+    }
+  }
+}
+
+.newaccount {
+  width: 35px;
+  span {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    color: #cccccc;
+    cursor: pointer;
+    &:hover {
+      color: #62b4f7;
+    }
+  }
+}
+
+.photo-container {
+  width: 85px;
+}
+
+.photo-wrap {
+  width: 100%;
+  height: 85px;
+  position: relative;
+  background-size: cover;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.login-state {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #5fb41b;
+  width: 17px;
+  height: 17px;
+  font-size: 17px;
+}
+
+.login-form-wrap {
+  width: 195px;
+  padding: 0 10px;
+}
+
+.login-input-wrap {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #d6d6d6;
+  border-radius: 3px;
+  background: #ffffff;
+  position: relative;
+  .password-input {
+    margin-top: 1px;
+  }
+  input {
+    width: 100%;
+    height: 29px;
+    border: none;
+    outline-color: darkblue;
+    text-indent: 10px;
+    font-size: 12px;
+    &:first-of-type {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      border-bottom: 1px solid #d6d6d6;
+    }
+    &:last-of-type {
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+  span {
+    position: absolute;
+    right: 5px;
+    color: #cccccc;
+  }
+  .number-selector {
+    top: 6px;
+  }
+  .password-keybord {
+    top: 35px;
+    transform: rotateY(180deg);
+  }
+}
+
+.login-radio-wrap {
+  width: 100%;
+  height: 17px;
+  margin: 10px 0 0;
+  ul {
+    width: 100%;
+    height: 100%;
+    li {
+      height: 100%;
+      width: 50%;
+      i {
+        width: 12px;
+        height: 12px;
+        border: 1px solid #cccccc;
+        float: left;
+        background: #ffffff;
+        color: #5fb41b;
+        margin-top: 2px;
+      }
+      span {
+        color: #6e6d6b;
+        margin-left: 5px;
+        font-size: 12px;
+        float: left;
+      }
+    }
+  }
+}
+
+.login-radio-wrap ul li:last-of-type i, .login-radio-wrap ul li:last-of-type span {
+  float: right;
+}
+
+.login-bt-wrap {
+  width: 100%;
+  height: 35px;
+  padding: 10px 0;
+}
+
+.login-btn {
+  width: 100%;
+  height: 30px;
+  border-radius: 3px;
+  background: #08a3dc;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: 11px;
+  line-height: 30px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    background: #3cc3f5;
+  }
+}
+
+.reg-links-wrap {
+  width: 55px;
+  ul {
+    li {
+      width: 100%;
+      height: 30px;
+      font-size: 12px;
+      line-height: 30px;
+      color: #2685e3;
+      cursor: pointer;
+    }
+  }
+}
+
+.qr-wrap {
+  width: 35px;
+}
+
+.qr-code {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  color: #cccccc;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  cursor: pointer;
+  &:hover {
+    color: #62b4f7;
+  }
+}
+
+@font-face {
+  font-family: "iconfont";
+  src: url('../../../../../assets/iconfont/iconfont.eot?t=1474527402');
+  src: url('../../../../../assets/iconfont/iconfont.eot?t=1474527402#iefix') format('embedded-opentype'),
+  url('../../../../../assets/iconfont/iconfont.woff?t=1474527402') format('woff'),
+  url('../../../../../assets/iconfont/iconfont.ttf?t=1474527402') format('truetype');
+
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-userplus {
+  &:before {
+    content: "\e650";
+  }
+}
+
+.icon-chenghao-copy {
+  &:before {
+    content: "\e604";
+  }
+}
+
+.icon-zuixiaohua {
+  &:before {
+    content: "\e617";
+  }
+}
+
+.icon-daosanjiao {
+  &:before {
+    content: "\e693";
+  }
+}
+
+.icon-erweima {
+  &:before {
+    content: "\e630";
+  }
+}
+
+.icon-jianpan {
+  &:before {
+    content: "\e61a";
+  }
+}
+
+.icon-duihao {
+  &:before {
+    content: "\e634";
+  }
+}
+
+.btn-ok {
+  position: absolute;
+  right: 91px;
+  bottom: 2px;
+}
+
+.btn-cancel {
+  position: absolute;
+  right: 10px;
+  bottom: 2px;
+}
+
+.userplus {
+  margin-left: 10px;
+  color: gray;
+  float: left;
+  margin-top: 114px;
+}

@@ -1,0 +1,21 @@
+.user-image {
+  float: left;
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+  }
+}
+
+.user-name {
+  float: left;
+  margin-left: 10px;
+}
+
+.group-member-row {
+  padding: 5px;
+  overflow: hidden;
+}

@@ -1,0 +1,26 @@
+
+.content {
+  position: absolute;
+  top: 36px;
+  bottom: 0;
+  width: 100%;
+  nav {
+    height: 50px;
+    background: #EDEEEE;
+    display: flex;
+    align-items: center;
+    color: #878787;
+  }
+  section {
+    position: absolute;
+    padding: 5px;
+    box-sizing: border-box;
+    top: 50px;
+    bottom: 0;
+    width: 100%;
+    background: white;
+  }
+}
+.actived-btn {
+  color: #278CDE;
+}

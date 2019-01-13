@@ -1,0 +1,42 @@
+
+<div class="left-container">
+    <div class="search-input">
+        <input type="text" [(ngModel)]="searchKey" placeholder="">
+    </div>
+    <ng-container *ngIf="!searchKey">
+        <app-create-group-friend-grouping-row
+                *ngFor="let friendGrouping of friendGroupings$ | async"
+                [friendGrouping]="friendGrouping"
+                (add)="addFriendGroupingAllFriends(createGroupFriendGroupingRow.userFriends)"
+                #createGroupFriendGroupingRow>
+            <app-create-group-friend-row
+                    *ngFor="let userFriend of createGroupFriendGroupingRow.userFriends"
+                    [userFriend]="userFriend"
+                    (click)="addInvitee(createGroupFriendRow.friend)" #createGroupFriendRow>
+            </app-create-group-friend-row>
+        </app-create-group-friend-grouping-row>
+    </ng-container>
+    <ng-container *ngIf="searchKey">
+        <app-create-group-friend-row
+                *ngFor="let userFriend of userFriends$ | async | userFriendsFilter:searchKey"
+                [userFriend]="userFriend"
+                (click)="deleteInvitee(createGroupFriendRow.friend)" #createGroupFriendRow>
+        </app-create-group-friend-row>
+    </ng-container>
+</div>
+<div class="right-container">
+    <div class="right-title">
+        <span>已选成员：</span>
+        <span class="select-rate">{{invitees.length}} / {{total$ | async}}</span>
+    </div>
+    <app-create-group-friend-row [friend]="user$ | async"></app-create-group-friend-row>
+    <app-create-group-friend-row *ngFor="let invitee of invitees"
+                                 [friend]="invitee"
+                                 (delete)="deleteInvitee(invitee.id)"
+                                 [showDeleteBtn]="true"
+    ></app-create-group-friend-row>
+</div>
+<footer>
+    <button mat-button color="primary" type="button" (click)="create()">完成创建</button>
+    <button mat-button color="primary" type="button" (click)="previous()">上一步</button>
+</footer>

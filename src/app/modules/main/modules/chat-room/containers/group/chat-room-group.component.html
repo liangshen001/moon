@@ -1,0 +1,16 @@
+<header class="drag">
+    <img [src]="(group$|async)?.imageUrl" draggable="false" >
+    <span>
+        {{(group$ | async)?.name}}
+    </span>
+</header>
+<div class="content" >
+    <div class="group-chat-room">
+        <app-chat-room-main [messages]="messages$ | async" (resend)="resendMessage($event)"
+                            (send)="sendMessage($event)"></app-chat-room-main>
+    </div>
+    <div class="group-members" ngxElementResizable [resizeLeft]="true" [minWidth]="200" [maxWidth]="500">
+        <app-chat-room-group-member-row *ngFor="let userGroup of userGroups$ | async"
+                                        [userGroup]="userGroup"></app-chat-room-group-member-row>
+    </div>
+</div>

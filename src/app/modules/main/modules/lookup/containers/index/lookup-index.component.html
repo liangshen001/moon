@@ -1,0 +1,11 @@
+
+<ngx-electron-window [showCloseBtn]="true"
+                     [showMiniBtn]="true"
+                     [background]="(userConfig$ | async)?.background">
+    <header>
+        <span class="no-drag" style="margin-right: 20px;" [routerLink]="['/lookup/user']">找人</span>
+        <span>|</span>
+        <span class="no-drag" style="margin-left: 20px;" [routerLink]="['/lookup/group']">找群</span>
+    </header>
+    <router-outlet></router-outlet>
+</ngx-electron-window>

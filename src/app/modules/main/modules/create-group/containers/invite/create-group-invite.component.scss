@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  margin-top: 15px;
+  border-top: 1px #f0f0f0 solid;
+  height: 370px;
+}
+.left-container {
+  width: 250px;
+  border-right: 1px #f0f0f0 solid;
+  overflow-y: auto;
+}
+.right-container {
+  flex: auto;
+}
+.right-title {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.search-input {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
+}
+.select-rate {
+  float: right;
+  padding-right: 20px;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  button {
+    float: right;
+  }
+}

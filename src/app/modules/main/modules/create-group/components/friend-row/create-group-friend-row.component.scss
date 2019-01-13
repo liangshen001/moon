@@ -1,0 +1,19 @@
+.friend-row {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 30px;
+
+  mat-icon {
+    margin-top: 3px;
+    float: right;
+    margin-right: 10px;
+
+  }
+
+  span {
+    visibility: hidden;
+  }
+  &:hover span {
+    visibility: visible !important;
+  }
+}

@@ -1,0 +1,54 @@
+
+<div class="container">
+    <div class="login">
+        <div style="    height: 100%;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    text-align: center;">
+            <div class="user-image-wrapper" [@imgTrigger]="(isLogining$ | async) ? 'logining' : 'login'">
+                <img src="../../../../../assets/images/logo.png" draggable="false">
+            </div>
+
+        </div>
+        <div class="login-form">
+            <mat-card [@formTrigger]="(isLogining$ | async) ? 'logining' : 'login'">
+                <mat-card-content>
+                    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+                        <mat-form-field appearance="outline" class="account-field">
+                            <mat-label>{{"auth.account" | translate}}</mat-label>
+                            <input matInput formControlName="account" required [matAutocomplete]="auto">
+                            <mat-autocomplete #auto="matAutocomplete" >
+                                <mat-option *ngFor="let loginUser of filteLoginUsers"
+                                            (onSelectionChange)="selectLoginUser(loginUser)"
+                                            [value]="loginUser.account">
+                                    {{ loginUser.account }}
+                                </mat-option>
+                            </mat-autocomplete>
+
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="password-field">
+                            <mat-label>{{"auth.password" | translate}}</mat-label>
+                            <input type="password" matInput formControlName="password" required>
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        </mat-form-field>
+                        <div class="check-box-group">
+                            <mat-checkbox class="example-margin" color="primary" formControlName="rememberPassword">
+                                {{"auth.remember_password" | translate}}
+                            </mat-checkbox>
+                            <mat-checkbox class="example-margin" color="primary" formControlName="autoLogin">
+                                {{"auth.auto_login" | translate}}
+                            </mat-checkbox>
+                        </div>
+
+                        <div class="login-buttons-wrapper">
+                            <button type="submit" color="primary" mat-raised-button>{{"auth.login" | translate}}</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </div>
+</div>

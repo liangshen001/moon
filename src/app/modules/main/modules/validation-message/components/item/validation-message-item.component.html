@@ -1,0 +1,59 @@
+<div class="item-container">
+    <div class="time-container">{{time | date:'yyyy年MM月dd日'}}</div>
+    <mat-card [class.non-operation]="!isOperation()">
+
+        <!--<mat-card-header>-->
+            <!--<mat-card-title>Shiba Inu</mat-card-title>-->
+            <!--<mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+
+        <!--</mat-card-header>-->
+        <div class="img-container">
+            <img [src]="user.imageUrl">
+        </div>
+        <div class="detail-container">
+            <div class="name-group">
+                <span *ngIf="!group">
+                    <span class="name">{{user.name}}</span>
+                    <span class="source">{{addSourceType | addSourceTypePipe}}</span>
+                </span>
+                <span *ngIf="group">
+                    <span>{{user.name}}</span>
+                    <span>申请加入群</span>
+                    <span>{{group.name}}</span>
+                </span>
+            </div>
+            <div class="sex-age-group">
+                <span class="sex"></span>
+                <span></span>
+            </div>
+            <div>
+                <span class="additional-message-group-title">附加消息：</span>
+                <span>已发送验证消息</span>
+            </div>
+        </div>
+        <div class="status-container">
+            <span *ngIf="!isOperation()">
+                {{status | addStatusPipe:!group:isSender}}
+            </span>
+            <span *ngIf="isOperation()">
+                <span class="ignore" (click)="ignore.emit()">忽略</span>
+
+                <button mat-icon-button (click)="agree.emit()">同意</button>
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="agree.emit()">
+                        <span>同意</span>
+                    </button>
+                    <button mat-menu-item (click)="reject.emit()">
+                        <span>拒绝</span>
+                    </button>
+                </mat-menu>
+            </span>
+        </div>
+        <div class="close">
+            <span (click)="close.emit()">x</span>
+        </div>
+    </mat-card>
+</div>

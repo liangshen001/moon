@@ -1,0 +1,68 @@
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  border-top: 1px #f0f0f0 solid;
+  button {
+    float: right;
+  }
+}
+.form-body {
+  margin-top: 20px;
+  height: 360px;
+  overflow: auto;
+  div {
+    margin-top: 20px;
+    label, mat-checkbox, mat-radio-button {
+      margin-right: 10px;
+    }
+    label {
+      display: inline-block;
+      width: 90px;
+      text-align: right;
+    }
+  }
+  .input-group {
+    margin-top: 10px;
+  }
+}
+mat-form-field {
+  height: 46px;
+  min-width: 300px;
+}
+.reading-type-field {
+  min-width: 80px;
+  width: 80px;
+}
+.school-field {
+  min-width: 220px;
+}
+.school-info {
+  display: inline-block;
+  width: 300px;
+  vertical-align: middle;
+}
+.region-group mat-form-field {
+  min-width: 150px;
+  width: 150px;
+}
+/******************************************************************/
+.school-identity-full {
+  min-width: 300px !important;
+  width: 300px !important;
+}
+
+.school-identity-item {
+  min-width: 100px;
+  width: 100px;
+}
+
+/deep/ .label-class {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+/deep/ .control-class {
+  width: 150px;
+  min-width: 150px;
+}

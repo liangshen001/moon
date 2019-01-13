@@ -1,0 +1,320 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@ctrl/ngx-emoji-mart/picker";
+
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  perspective: 800px;
+  height: 100%;
+  font: caption;
+  font-size: 14px;
+}
+
+.drag {
+  -webkit-app-region: drag;
+}
+
+input,
+button,
+textarea,
+img,
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.chat-type-container {
+  height: 100%;
+  .mat-tab-body-wrapper {
+    height: 100%;
+  }
+  // 修改插件tab header中label的高度
+  .mat-tab-label {
+    height: 35px;
+  }
+  .mat-tab-body-content {
+    -webkit-backface-visibility: initial;
+    backface-visibility: initial;
+  }
+}
+
+/*******************************************************************************************************/
+
+
+/******************************************************************************************************/
+/* 滚动条 */
+::-webkit-scrollbar-thumb:horizontal { /*水平滚动条的样式*/
+  width: 5px;
+  background-color: #CCCCCC;
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #fff; /*滚动条的背景颜色*/
+  -webkit-border-radius: 0; /*滚动条的圆角宽度*/
+}
+
+::-webkit-scrollbar {
+  width: 9px; /*滚动条的宽度*/
+  height: 5px; /*滚动条的高度*/
+}
+
+::-webkit-scrollbar-thumb:vertical { /*垂直滚动条的样式*/
+  height: 50px;
+  background-color: #999;
+  -webkit-border-radius: 4px;
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+  border: 2px solid #fff;
+}
+
+::-webkit-scrollbar-thumb:hover { /*滚动条的hover样式*/
+  height: 50px;
+  background-color: #9f9f9f;
+  -webkit-border-radius: 4px;
+}
+
+/********************************************emoji插件样式修改***********************************************/
+.emoji-mart {
+  width: 455px !important;
+}
+
+.emoji-mart-search {
+  display: none;
+}
+
+.emoji-mart-scroll {
+  border-top-width: 1px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 200px !important;
+}
+
+.emoji-mart .emoji-mart-bar:nth-child(4) {
+  display: none;
+}
+
+/****************************************************emoji***************************************************/
+.emoji-search .search-header {
+  width: initial !important;
+}
+
+.emoji-search.bottom {
+  top: -241px !important;
+}
+
+.emoji-search input {
+  width: 100% !important;
+}
+
+.textarea textarea {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  box-sizing: border-box;
+  background-color: gainsboro;
+  padding: 0 10px;
+  border: none;
+  resize: none;
+  outline: none;
+}
+
+// button {
+//   line-height: 32px !important;
+//   float: right;
+// }
+
+/****************************************************************************************/
+@-webkit-keyframes shake-animation {
+  10% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+  }
+  20% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+  }
+  30% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+  }
+  40% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+  }
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+  }
+  60% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+  }
+  70% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+  }
+  80% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+.shake {
+  transform-style: unset !important;
+  -webkit-animation-name: shake-animation;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+}
+
+/* BS Loader */
+
+.loader {
+  bottom: 0;
+  height: 175px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 175px;
+}
+
+.loader {
+  bottom: 0;
+  height: 175px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 175px;
+}
+
+.loader .dot {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 87.5px;
+}
+
+.loader .dot::before {
+  border-radius: 100%;
+  content: "";
+  height: 87.5px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(0);
+  width: 87.5px;
+}
+
+.loader .dot:nth-child(7n+1) {
+  transform: rotate(45deg);
+}
+
+.loader .dot:nth-child(7n+1)::before {
+  animation: 0.8s linear 0.1s normal none infinite running load;
+  background: #00ff80 none repeat scroll 0 0;
+}
+
+.loader .dot:nth-child(7n+2) {
+  transform: rotate(90deg);
+}
+
+.loader .dot:nth-child(7n+2)::before {
+  animation: 0.8s linear 0.2s normal none infinite running load;
+  background: #00ffea none repeat scroll 0 0;
+}
+
+.loader .dot:nth-child(7n+3) {
+  transform: rotate(135deg);
+}
+
+.loader .dot:nth-child(7n+3)::before {
+  animation: 0.8s linear 0.3s normal none infinite running load;
+  background: #00aaff none repeat scroll 0 0;
+}
+
+.loader .dot:nth-child(7n+4) {
+  transform: rotate(180deg);
+}
+
+.loader .dot:nth-child(7n+4)::before {
+  animation: 0.8s linear 0.4s normal none infinite running load;
+  background: #0040ff none repeat scroll 0 0;
+}
+
+.loader .dot:nth-child(7n+5) {
+  transform: rotate(225deg);
+}
+
+.loader .dot:nth-child(7n+5)::before {
+  animation: 0.8s linear 0.5s normal none infinite running load;
+  background: #2a00ff none repeat scroll 0 0;
+}
+
+.loader .dot:nth-child(7n+6) {
+  transform: rotate(270deg);
+}
+
+.loader .dot:nth-child(7n+6)::before {
+  animation: 0.8s linear 0.6s normal none infinite running load;
+  background: #9500ff none repeat scroll 0 0;
+}
+
+.loader .dot:nth-child(7n+7) {
+  transform: rotate(315deg);
+}
+
+.loader .dot:nth-child(7n+7)::before {
+  animation: 0.8s linear 0.7s normal none infinite running load;
+  background: magenta none repeat scroll 0 0;
+}
+
+.loader .dot:nth-child(7n+8) {
+  transform: rotate(360deg);
+}
+
+.loader .dot:nth-child(7n+8)::before {
+  animation: 0.8s linear 0.8s normal none infinite running load;
+  background: #ff0095 none repeat scroll 0 0;
+}
+
+.loader .lading {
+  /* background-image: url("../images/loading.gif"); */
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  bottom: -40px;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 180px;
+}
+
+@keyframes load {
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes load {
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* END: BS Loader */

@@ -1,0 +1,65 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+      "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "paths": {
+      "@ngx-electron/core": [
+        "dist/ngx-electron/core"
+      ],
+      "@ngx-electron/core/*": [
+        "dist/ngx-electron/core/*"
+      ],
+      "@ngx-electron/main": [
+        "dist/ngx-electron/main"
+      ],
+      "@ngx-electron/main/*": [
+        "dist/ngx-electron/main/*"
+      ],
+      "@ngx-electron/data": [
+        "dist/ngx-electron/data"
+      ],
+      "@ngx-electron/data/*": [
+        "dist/ngx-electron/data/*"
+      ],
+      "ngx-element-resizable": [
+        "dist/ngx-element-resizable"
+      ],
+      "ngx-element-resizable/*": [
+        "dist/ngx-element-resizable/*"
+      ],
+      "ngx-mat-dynamic-form": [
+        "dist/ngx-mat-dynamic-form"
+      ],
+      "ngx-mat-dynamic-form/*": [
+        "dist/ngx-mat-dynamic-form/*"
+      ],
+      "ngx-message-editor": [
+        "dist/ngx-message-editor"
+      ],
+      "ngx-message-editor/*": [
+        "dist/ngx-message-editor/*"
+      ],
+      "ngx-row": [
+        "dist/ngx-row"
+      ],
+      "ngx-row/*": [
+        "dist/ngx-row/*"
+      ]
+    }
+  }
+}

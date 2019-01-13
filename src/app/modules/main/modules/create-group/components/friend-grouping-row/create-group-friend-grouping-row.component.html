@@ -1,0 +1,18 @@
+<div (click)="openOrClose()" ngxRow [rowGroupName]="'create-group-friend-grouping-row'" class="friend-grouping-row">
+    <span [hidden]="isOpen">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </span>
+    <span [hidden]="!isOpen">
+            <mat-icon>keyboard_arrow_down</mat-icon>
+    </span>
+    <span class="friend-grouping-name">
+        {{friendGrouping.name}}
+    </span>
+    <span class="add-all-friend-grouping-friends"
+          (click)="onAdd($event)">
+        <mat-icon>control_point</mat-icon>
+    </span>
+</div>
+<div *ngIf="isOpen">
+    <ng-content></ng-content>
+</div>

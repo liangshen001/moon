@@ -1,0 +1,9 @@
+
+<div class="content">
+    <h5 *ngIf="groupingType === 0">选定的群分组将被删除,组内的qq群将会移至系统默认分组"我的群".你确定要删除该群分组吗?</h5>
+    <h5 *ngIf="groupingType === 1">选定的好友分组将被删除,组内的qq群将会移至系统默认分组"我的好友".你确定要删除该好友分组吗?</h5>
+</div>
+<footer>
+    <button mat-button (click)="cancel()">取消</button>
+    <button mat-button (click)="confirm()">确定</button>
+</footer>

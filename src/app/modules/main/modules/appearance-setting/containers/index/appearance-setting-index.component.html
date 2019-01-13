@@ -1,0 +1,22 @@
+<ng-template #titleTemp>
+    <span style="color: white">{{'main.appearance-setting.title' | translate}}</span>
+</ng-template>
+<ngx-electron-window [showCloseBtn]="true"
+                     [showMiniBtn]="true"
+                     [background]="(userConfig$ | async)?.background"
+                     [titleTemp]="titleTemp">
+
+    <div class="content">
+        <nav>
+            <button mat-button routerLink="/appearance-setting/skin-setting"
+                    [class.actived-btn]="activated('skin-setting')"><mat-icon>palette</mat-icon>皮肤设置</button>
+            <!--<button mat-button>场景秀</button>-->
+            <button mat-button routerLink="/appearance-setting/colourful-bubble"
+                    [class.actived-btn]="activated('colourful-bubble')"><mat-icon>chat_bubble</mat-icon>多彩气泡</button>
+            <!--<button mat-button>界面管理</button>-->
+        </nav>
+        <section>
+            <router-outlet></router-outlet>
+        </section>
+    </div>
+</ngx-electron-window>

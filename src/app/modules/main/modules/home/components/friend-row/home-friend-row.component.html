@@ -1,0 +1,23 @@
+<app-home-row [name]="user?.name"
+              [imageUrl]="user?.imageUrl"
+              [dragging]="dragging"
+              [menuItems]="menuItems"
+              [desc]="user?.saying"
+              [grayImg]="user?.onlineStatus == offline"
+              [userConfig]="userConfig"
+              [remark]="userFriend.remark"
+              [chatType]="0"></app-home-row>
+<!--<div class="friend-row-container" [class.small-row]="isSmallImg()"-->
+     <!--windowRow wrName="friendRow" contextMenu [menuItems]="menuItems"-->
+     <!--draggable="true" [class.draging]="dragging" [(selected)]="selected">-->
+  <!--<span class="float-left">-->
+    <!--<img [src]="(user$ | async)?.imageUrl"  [class.gray-img]="(user$ | async)?.onlineStatus == offline" draggable="false">-->
+    <!--&lt;!&ndash;[class.gray-img]="(user$ | async)?"&ndash;&gt;-->
+  <!--</span>-->
+    <!--<div>-->
+        <!--<div class="user-name">{{(user$ | async)?.name}}</div>-->
+        <!--<div class="user-saying">-->
+            <!--<small>{{(user$ | async)?.saying}}</small>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

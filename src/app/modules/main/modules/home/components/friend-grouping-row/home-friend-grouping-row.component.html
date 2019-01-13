@@ -1,0 +1,11 @@
+
+<app-home-grouping-row [menuItems]="menuItems" (openOrClose)="openOrClose()" (changeGrouping)="changeFriendGroup($event)"
+                       (closeRenameGroupingInput)="closeRenameFriendGroupInput($event)" [grouping]="friendGrouping"
+                       [itemDragging]="(dragging$ | async)" [onlineRate]="onlineRate"
+                       (groupingDragStart)="friendGroupingDragStart()"
+                       (groupingChangeSort)="groupingChangeSort($event)"
+                       [groupingDragging]="friendGroupingDragging$ | async"
+                       [groupingDraggable]="friendGrouping.type === 0 || friendGrouping.type === 4"
+                       (getGroupingNameInput)="getGroupingNameInput($event)">
+    <app-home-private-chat-row *ngFor="let userFriend of userFriends" [userFriend]="userFriend" ></app-home-private-chat-row>
+</app-home-grouping-row>

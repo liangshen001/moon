@@ -1,0 +1,16 @@
+
+<div class="normal-message" [class.self-message]="(sender$ | async)?.self"
+     [class.others-message]="!(sender$ | async)?.self">
+    <div class="send-image">
+        <img [attr.src]="(sender$ | async)?.imageUrl" draggable="false">
+    </div>
+    <!-- @ {{message.createTime | date: 'yy-MM-dd hh:mm:ss'}} -->
+    <div class="send-user">{{(sender$ | async)?.name}}</div>
+    <br>
+    <div class="send-text">
+        <span class="arrow"></span>
+        <span [innerHTML]="message.content"></span>
+    </div>
+    <mat-icon class="send-error-icon" *ngIf="message.sendError && !showResendIcon" (mouseenter)="showResendIcon = true" >error</mat-icon>
+    <mat-icon class="resend-icon" *ngIf="message.sendError && showResendIcon" (mouseleave)="showResendIcon = false" (click)="resendMessage()">loop</mat-icon>
+</div>

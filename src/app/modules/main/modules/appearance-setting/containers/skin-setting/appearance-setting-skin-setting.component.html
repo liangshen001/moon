@@ -1,0 +1,23 @@
+<div class="img-list">
+    <img *ngFor="let skin of skins$ | async"
+         [src]="skin.url"
+         [title]="skin.name"
+         (click)="changeBackgroundImage(skin.url)">
+</div>
+<div class="color-list">
+    <span class="custom-color-btn hover-border" cpPosition="top"
+          [colorPicker]="(userConfig$ | async)?.background"
+          (cpSliderChange)="sliderChange($event)"></span>
+    <span *ngFor="let color of colors" class="hover-border" [style.background]="color" (click)="changeBackground(color)"></span>
+</div>
+<footer>
+    <label>面板透明度</label>
+    <mat-slider
+            [max]=".999"
+            [min]=".700"
+            [step]="-.001"
+            [thumbLabel]="false"
+            [value]="(userConfig$ | async)?.opacity"
+            (change)="changeOpacity($event)">
+    </mat-slider>
+</footer>

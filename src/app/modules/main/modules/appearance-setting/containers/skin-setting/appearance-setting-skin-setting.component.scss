@@ -1,0 +1,40 @@
+
+.img-list {
+  top: 0;
+  bottom: 90px;
+  position: absolute;
+  width: 100%;
+  img {
+    width: 150px;
+    height: 250px;
+    border: 1px white solid;
+  }
+}
+
+.color-list {
+  height: 40px;
+  bottom: 50px;
+  position: absolute;
+  width: 100%;
+  span {
+    height: 40px;
+    width: 40px;
+    margin: 0 1px;
+    display: inline-block;
+    &:hover {
+      box-sizing: border-box;
+      border: 1px #278CDE solid;
+      cursor: pointer;
+    }
+  }
+  .custom-color-btn {
+    background-image: -webkit-linear-gradient(top, red, blue);
+  }
+}
+
+footer {
+  height: 50px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}

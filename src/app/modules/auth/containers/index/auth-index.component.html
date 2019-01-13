@@ -1,0 +1,10 @@
+
+<div [class.auth-win-container]="electron" [class.full]="!electron">
+    <ngx-electron-window [showCloseBtn]="true" [showMiniBtn]="true" (setting)="openSettingPage()">
+        <header>
+            <mat-icon>brightness_1</mat-icon>
+            <span>moon</span>
+        </header>
+        <app-auth-login [loginForm]="loginForm" [loginUsers]="loginUsers$ | async"></app-auth-login>
+    </ngx-electron-window>
+</div>

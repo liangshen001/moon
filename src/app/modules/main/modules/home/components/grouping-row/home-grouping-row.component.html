@@ -1,0 +1,40 @@
+
+<div class="grouping-name-content"
+     (click)="openOrClose.emit()"
+     ngxRow
+     [focusable]="false"
+     ngxElectronContextMenu
+     [menuItems]="menuItems"
+     [draggable]="groupingDraggable && !grouping.adding && !grouping.renaming"
+     (drop)="drop($event)"
+     (dragstart)="dragStart($event)"
+     (dragover)="$event.preventDefault()" >
+    <div class="grouping-name" ><!--changeGrouping.emit($event)-->
+        <span [hidden]="grouping.open && !itemDragging">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </span>
+        <span [hidden]="!grouping.open || itemDragging">
+            <mat-icon>keyboard_arrow_down</mat-icon>
+        </span>
+        <span [hidden]="!grouping.renaming && !grouping.adding" class="alias-input">
+            <input #groupingNameInput (blur)="rename()">
+        </span>
+        <span *ngIf="!grouping.renaming">
+            {{grouping.name}}
+            {{onlineRate}}
+        </span>
+    </div>
+    <div class="top"
+         [class.top-dragover]="topDragOver"
+         (drop)="drop($event, 1)"
+         (dragover)="setTopDragOver(true)"
+         (dragleave)="setTopDragOver(false)"></div>
+    <div class="bottom"
+         [class.bottom-dragover]="bottomDragOver"
+         (dragover)="setBottomDragOver(true)"
+         (dragleave)="setBottomDragOver(false)"
+         (drop)="drop($event, -1)"></div>
+</div>
+<div *ngIf="grouping.open"><!--[class.display-none]="!grouping.open" [hidden]="!friendGroup.open"  || (itemDragging$ | async)-->
+    <ng-content></ng-content>
+</div>

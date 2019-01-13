@@ -1,0 +1,12 @@
+export enum CreateGroupType {
+    CLASSMATES_COLLEAGUES = 0,
+    TEACHERS_STUDENTS = 1,
+    HOBBIES_INTERESTS = 2,
+    VOCATION_COMMUNICATION = 3,
+    LIFE_LEISURE = 4,
+    STUDY_EXAM = 5,
+    GAME = 6,
+    HOME = 7,
+    BRAND_PRODUCTS = 8,
+    FANS = 9
+}

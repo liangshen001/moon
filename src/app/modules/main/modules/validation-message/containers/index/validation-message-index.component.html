@@ -1,0 +1,23 @@
+<ngx-electron-window ngxElectronInitStore>
+    <ng-template #titleTemp>
+        <span style="color: white">验证消息</span>
+    </ng-template>
+    <header class="drag">
+        <div class="no-drag">
+            <span [class.selected]="isFriendValidation()" (click)="showFriendValidation()">好友验证</span>
+            <span [class.selected]="isGroupSystemMessage()" (click)="showGroupSystemMessage()">群系统消息</span>
+        </div>
+    </header>
+    <div class="content-container">
+        <ng-container *ngIf="isFriendValidation()">
+            <app-validation-message-friend-validation
+                    *ngFor="let friendValidation of friendValidations$ | async"
+                    [friendValidation]="friendValidation"></app-validation-message-friend-validation>
+        </ng-container>
+        <ng-container *ngIf="isGroupSystemMessage()">
+            <app-validation-message-group-system-message
+                    *ngFor="let groupSystemMessage of groupSystemMessages$ | async"
+                    [groupSystemMessage]="groupSystemMessage"></app-validation-message-group-system-message>
+        </ng-container>
+    </div>
+</ngx-electron-window>

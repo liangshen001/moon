@@ -1,0 +1,15 @@
+.friend-grouping-row {
+  height: 30px;
+  line-height: 30px;
+  &:hover .add-all-friend-grouping-friends {
+    visibility: visible !important;
+  }
+}
+mat-icon, .friend-grouping-name {
+  vertical-align: middle;
+}
+.add-all-friend-grouping-friends {
+  visibility: hidden;
+  margin-right: 10px;
+  float: right;
+}

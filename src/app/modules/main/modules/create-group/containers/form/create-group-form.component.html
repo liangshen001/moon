@@ -1,0 +1,22 @@
+
+    <div class="form-body">
+        <div *ngIf="showIdentityName">
+            <label></label>
+            <span>
+                你在群里的身份展示为:
+                {{createGroupService.getSchoolIdentityName(
+                dynamicForm.form.get('schoolIdentity').value,
+                dynamicForm.form.get('teachSubject').value,
+                dynamicForm.form.get('teachSubjectText').value,
+                dynamicForm.form.get('patriarchType').value,
+                dynamicForm.form.get('appellation').value,
+                dynamicForm.form.get('childName').value,
+                dynamicForm.form.get('realName').value)}}
+            </span>
+        </div>
+        <ngx-mat-dynamic-form #dynamicForm [fields]="fields"></ngx-mat-dynamic-form>
+    </div>
+    <footer>
+        <button mat-button color="primary" (click)="next()">下一步</button>
+        <button mat-button color="primary" type="button" (click)="previous()">上一步</button>
+    </footer>

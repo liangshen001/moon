@@ -1,0 +1,99 @@
+
+.normal-message {
+  clear: both;
+  min-height: 80px;
+}
+.send-error-icon {
+  float: right;
+  color: red;
+  cursor: default;
+}
+.resend-icon {
+  float: right;
+  cursor: default;
+}
+.send-user {
+  position: relative;
+}
+
+.send-image {
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+  }
+  clear: both;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-size: 100%;
+}
+
+.arrow {
+  position: absolute;
+  top: 5px;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  border: solid 6px;
+}
+
+.send-text {
+  position: relative;
+  display: inline-block;
+  padding: 4px 10px 4px 10px;
+  font: 18px/18px 'Noto Sans', sans-serif;
+  border-radius: 4px;
+  background-color: rgba(25, 147, 147, 0.8);
+  color: black;
+  max-width: 70%;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.self-message {
+  .send-user {
+    float: right;
+    margin-right: 15px;
+  }
+  .send-text {
+    animation: show-chat-odd 0.15s 1 ease-in;
+    -moz-animation: show-chat-odd 0.15s 1 ease-in;
+    -webkit-animation: show-chat-odd 0.15s 1 ease-in;
+    float: right;
+    margin-right: 20px;
+  }
+  .arrow {
+    float: right;
+    right: -12px;
+    border-color: rgba(25, 147, 147, 0) rgba(25, 147, 147, 0) rgba(25, 147, 147, 0) rgba(25, 147, 147, 0.8);
+  }
+  .send-image {
+    float: right;
+    margin-right: 10px;
+  }
+
+}
+
+.others-message {
+  .send-user {
+    float: left;
+    margin-left: 15px;
+  }
+  .send-text {
+    animation: show-chat-even 0.15s 1 ease-in;
+    -moz-animation: show-chat-even 0.15s 1 ease-in;
+    -webkit-animation: show-chat-even 0.15s 1 ease-in;
+    float: left;
+    margin-left: 20px;
+  }
+  .arrow {
+    float: left;
+    left: -12px;
+    border-color: rgba(25, 147, 147, 0) rgba(25, 147, 147, 0.8) rgba(25, 147, 147, 0) rgba(25, 147, 147, 0);
+  }
+  .send-image {
+    float: left;
+    margin-left: 10px;
+  }
+}

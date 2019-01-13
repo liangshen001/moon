@@ -1,0 +1,7 @@
+<div ngxRow [rowGroupName]="'create-group-friend-row'" class="friend-row" >
+    <img [src]="friend.imageUrl" alt="">
+    {{friend?.name}}
+    <span (click)="delete.emit()" *ngIf="showDeleteBtn">
+        <mat-icon>highlight_off</mat-icon>
+    </span>
+</div>

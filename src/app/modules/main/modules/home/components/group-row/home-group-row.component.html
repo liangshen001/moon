@@ -1,0 +1,21 @@
+<!--<div class="group-row-container" windowRow wrName="groupRow" contextMenu [menuItems]="menuItems"-->
+     <!--draggable="true" [class.draging]="dragging">-->
+    <!--<span class="float-left">-->
+        <!--<img [src]="(group$ | async)?.imageUrl" draggable="false">-->
+    <!--</span>-->
+    <!--<div class="group-row-content">-->
+        <!--<div>{{(group$ | async)?.name}}</div>-->
+        <!--<div>-->
+            <!--<small>{{(group$ | async)?.des}}</small>-->
+        <!--</div>-->
+
+    <!--</div>-->
+<!--</div>-->
+<app-home-row [name]="(group$ | async)?.name"
+              [imageUrl]="(group$ | async)?.imageUrl"
+              [dragging]="dragging"
+              [menuItems]="menuItems"
+              [remark]="userGroup.remark"
+              [grayImg]="false"
+              [userConfig]="userConfig"
+              [chatType]="1"></app-home-row>

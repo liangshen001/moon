@@ -1,0 +1,16 @@
+{
+  "auth": {
+    "login": "登录",
+    "auto_login": "自动登录",
+    "remember_password": "记住密码",
+    "account": "账号",
+    "password": "密码"
+  },
+  "main": {
+    "appearance-setting": {
+      "title": "更改外观",
+      "skin-setting": "皮肤设置",
+      "colourful-bubble": "多彩气泡"
+    }
+  }
+}

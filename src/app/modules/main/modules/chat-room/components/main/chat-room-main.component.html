@@ -1,0 +1,43 @@
+<!--<div style="text-align: center;">-->
+<!--<a href="javascript:" (click)="loadMessages()">加载更多</a>-->
+<!--</div>-->
+<div class="message-content" #messageScroll>
+    <!--<virtual-scroll style="height:100%" [items]="messages" (update)="messageList = $event"-->
+    <!--(change)="onListChange($event)">-->
+    <!--<div *ngIf="loading" class="loader">Loading...</div>-->
+    <!--<app-chat-room-message *ngFor="let content of messages" [content]="content"></chat-room-content>-->
+    <!--</virtual-scroll>-->
+    <div #messageScroll class="message-container">
+        <app-chat-room-message *ngFor="let message of messages" [message]="message"
+                               (resend)="resendMessage($event)"></app-chat-room-message>
+    </div>
+</div>
+
+<emoji-mart class="emoji-mart-popup" set="emojione" [hidden]="!isShowPopup"
+            (emojiClick)="addEmoji($event)" [autoFocus]="true"
+            (mouseenter)="closable = false" (mouseleave)="closable = true"></emoji-mart>
+<!--[class.group-style]="data?.users"-->
+<div class="edit" ngxElementResizable [resizeTop]="true" [minHeight]="100" [maxHeight]="400">
+    <div class="bar">
+        <span class="font"></span>
+        <span class="face" tabindex="0" (click)="openPopup()" (blur)="closePopup()"></span>
+        <span class="shake" (click)="shake.emit()" *ngIf="friendChat == type"></span>
+        <span class="det"></span>
+        <span class="img">
+            <input type="file" class="add-file" ref="inputer"/>
+        </span>
+        <!--<span class="muc">&#xe625;</span>-->
+        <span class="cut" (click)="shotScreen()"></span>
+        <strong class="record fr">查看消息记录</strong>
+    </div>
+    <!--<div contentEditable="true" class="message-input" ></div>-->
+    <!-- <div class="textarea J-Edit" contenteditable="true" #messageDiv ></div> -->
+    <!--<emoji-input class="textarea" [popupAnchor]="'bottom'" (setPopupAction)="openPopup = $event"-->
+    <!--[(model)]="currentMessage" [textArea]="{cols: 40, rows: 3}"></emoji-input>-->
+    <div class="message-input">
+        <ngx-message-editor [(ngModel)]="messageContent" (enterEvent)="onSendMessage()" (ctrlEnterEvent)="addBr()"></ngx-message-editor>
+    </div>
+    <div class="send-btn-container">
+        <button mat-button (click)="onSendMessage()">发送</button>
+    </div>
+</div>

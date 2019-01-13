@@ -1,0 +1,36 @@
+
+.group-members {
+  height: 100%;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 215.8px;
+}
+
+header {
+  border: 1px #dbe0e5 solid;
+  height: 84px;
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    float: left;
+    margin: 12px;
+  }
+  span {
+    float: left;
+    margin-top: 15px;
+  }
+}
+
+.group-chat-room {
+  flex: auto;
+  width: 0;
+  height: 100%;
+}
+.content {
+  position: absolute;
+  width: 100%;
+  top: 84px;
+  bottom: 0;
+  display: flex;
+}

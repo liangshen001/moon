@@ -1,0 +1,23 @@
+<div class="row-container"
+     [class.small-row]="isSmallImg()"
+     [class.multiple-columns-tiles]="isMultipleColumnsTiles()"
+     [class.draging]="dragging"
+     ngxRow
+     [rowGroupName]="chatType"
+     ngxElectronContextMenu
+     [menuItems]="menuItems"
+     draggable="true"
+     [(selected)]="selected">
+  <span class="float-left">
+    <img [src]="imageUrl"  [class.gray-img]="grayImg" draggable="false">
+  </span>
+    <div>
+        <div class="name">
+            <span>{{getTitle()}}</span>
+            <span class="subtitle">{{getSubtitle()}}</span>
+        </div>
+        <div class="desc">
+            <small>{{getDesc()}}</small>
+        </div>
+    </div>
+</div>

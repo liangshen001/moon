@@ -1,0 +1,11 @@
+<header class="drag">
+    <img [attr.src]="(friend$ | async)?.imageUrl" draggable="false" >
+    <span>
+        {{(friend$ | async)?.name}}
+    </span>
+</header>
+<div class="content">
+    <app-chat-room-main [type]="0" [messages]="messages$ | async"
+                        (send)="sendMessage($event)"
+                        (resend)="resendMessage($event)"></app-chat-room-main>
+</div>
