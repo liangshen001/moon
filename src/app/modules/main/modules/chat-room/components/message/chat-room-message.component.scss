@@ -1,7 +1,8 @@
 
 .normal-message {
   clear: both;
-  min-height: 80px;
+  min-height: 70px;
+  margin-top: 10px;
 }
 .send-error-icon {
   float: right;
@@ -27,6 +28,7 @@
   width: 30px;
   height: 30px;
   background-size: 100%;
+  margin-top: 10px;
 }
 
 .arrow {
@@ -49,6 +51,7 @@
   max-width: 70%;
   word-wrap: break-word;
   word-break: break-all;
+  margin-top: 5px;
 }
 
 .self-message {
@@ -61,7 +64,7 @@
     -moz-animation: show-chat-odd 0.15s 1 ease-in;
     -webkit-animation: show-chat-odd 0.15s 1 ease-in;
     float: right;
-    margin-right: 20px;
+    margin-right: 15px;
   }
   .arrow {
     float: right;
@@ -85,7 +88,7 @@
     -moz-animation: show-chat-even 0.15s 1 ease-in;
     -webkit-animation: show-chat-even 0.15s 1 ease-in;
     float: left;
-    margin-left: 20px;
+    margin-left: 15px;
   }
   .arrow {
     float: left;

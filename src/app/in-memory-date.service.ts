@@ -173,25 +173,25 @@ export class InMemoryDateService implements InMemoryDbService {
             id: 6,
             name: '我的好友2',
             open: false,
-            sort: 5,
+            sort: 2,
             type: FriendGroupingType.CUSTOM
         }, {
             id: 3,
             name: '公众号',
             open: false,
-            sort: -1,
+            sort: 100,
             type: FriendGroupingType.OFFICIAL_ACCOUNTS
         }, {
             id: 4,
             name: '陌生人',
             open: false,
-            sort: -2,
+            sort: 101,
             type: FriendGroupingType.STRANGER
         }, {
             id: 5,
             name: '黑名单',
             open: false,
-            sort: -3,
+            sort: 102,
             type: FriendGroupingType.BLANK_LIST
         }];
 
@@ -457,6 +457,8 @@ export class InMemoryDateService implements InMemoryDbService {
         const collectionName = reqInfo.collectionName;
         if (collectionName === 'userConfigs') {
             return this.getUserConfigs(reqInfo);
+        } else if (collectionName === 'i18n') {
+            return this.getI18nJson(reqInfo);
         }
         return undefined; // let the default GET handle all others
     }
@@ -518,6 +520,24 @@ export class InMemoryDateService implements InMemoryDbService {
         });
     }
 
+
+    private getI18nJson(reqInfo: RequestInfo) {
+        return reqInfo.utils.createResponse$(() => {
+            const oReq = new XMLHttpRequest();
+            console.log(`请求地址：${reqInfo.url}`);
+            oReq.open('GET', reqInfo.url, false); // 同步请求
+            oReq.send(null);
+            const data = JSON.parse(oReq.responseText);
+            console.log(`请求i18n:`);
+            console.log(data);
+            const dataEncapsulation = reqInfo.utils.getConfig().dataEncapsulation;
+            const options: ResponseOptions = {
+                body: data,
+                status: STATUS.OK
+            };
+            return this.finishOptions(options, reqInfo);
+        });
+    }
     // HTTP GET interceptor handles requests for villains
     private getVillains(reqInfo: RequestInfo) {
         return reqInfo.utils.createResponse$(() => {

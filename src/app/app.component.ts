@@ -10,11 +10,10 @@ import {environment} from '../environments/environment';
 export class AppComponent {
     constructor(public electronService: NgxElectronService,
                 private translate: TranslateService) {
-        if (environment.production) {
-            translate.addLangs(['zh-CN', 'en-US']);
-            translate.setDefaultLang('zh-CN');
-            translate.resetLang(translate.getBrowserCultureLang());
-        }
+        translate.addLangs(['zh-CN', 'en-US']);
+        translate.setDefaultLang('zh-CN');
+        translate.resetLang(translate.getBrowserCultureLang());
+        translate.use(translate.getBrowserCultureLang());
         if (electronService.isElectron()) {
             console.log('Mode electron');
         } else {
