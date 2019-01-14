@@ -1,7 +1,7 @@
 import {app, BrowserWindow, ipcMain, nativeImage} from 'electron';
 import {screenShot} from './electron/shot-screen';
 import * as dotenv from 'dotenv';
-import {createTray, createWindow, initElectronMainIpcListener} from '@ngx-electron/main';
+import {createTray, createWindow, initElectronMainIpcListener, isMac} from '@ngx-electron/main';
 
 let loginWin, homeWin: BrowserWindow;
 initElectronMainIpcListener();
@@ -23,7 +23,10 @@ ipcMain.on('switch-account', () => {
 });
 
 function init() {
-    createTray('icon/icon.ico');
+    console.log(process.platform);
+    if (!isMac()) {
+        createTray('icon/icon.ico');
+    }
 
     // const image = path.join(app.getAppPath(), `/dist/${app.getName()}/assets/icon/icon.ico`);
     // console.log(nativeImage.createFromPath(image).toDataURL());
