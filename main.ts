@@ -4,9 +4,7 @@ import * as dotenv from 'dotenv';
 import {createTray, createWindow, initElectronMainIpcListener} from '@ngx-electron/main';
 
 let loginWin, homeWin: BrowserWindow;
-initElectronMainIpcListener({
-    isServer: true
-});
+initElectronMainIpcListener();
 try {
     dotenv.config();
 } catch {
@@ -25,17 +23,20 @@ ipcMain.on('switch-account', () => {
 });
 
 function init() {
-    // createTray('icon/icon.ico');
+    createTray('icon/icon.ico');
 
     // const image = path.join(app.getAppPath(), `/dist/${app.getName()}/assets/icon/icon.ico`);
     // console.log(nativeImage.createFromPath(image).toDataURL());
     loginWin = createWindow('auth', {
-        width: 505,
-        height: 480,
+        width: 439,
+        height: 340,
         alwaysOnTop: true,
         skipTaskbar: true,
         resizable: false,
-        fullscreenable: false
+        fullscreenable: false,
+        maximizable: false,
+        title: 'moon',
+
     });
     loginWin.webContents.openDevTools();
     // loginWin = createLoginWindow(appTray);

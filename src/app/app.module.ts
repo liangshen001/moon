@@ -16,12 +16,18 @@ import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDateService} from './in-memory-date.service';
 import {effects} from './effects';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NgxElectronCoreModule} from '@ngx-electron/core';
+import {NgxElectronCoreModule, NgxElectronService} from '@ngx-electron/core';
 import {NgxElectronDataModule} from '@ngx-electron/data';
 
-// AoT requires an exported function for factories
-export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+// 加载翻译文件 需要判断当前是否以服务的方式加载页面, 使用angular-in-memory-web-api注意处理一下请求
+export function HttpLoaderFactory(http: HttpClient, electronService: NgxElectronService) {
+    let prefix;
+    if (electronService.isServer()) {
+        prefix = `http://${electronService.getHost()}:${electronService.getPort()}/assets/i18n/`;
+    } else {
+        prefix = './assets/i18n/';
+    }
+    return new TranslateHttpLoader(http, prefix, '.json');
 }
 
 @NgModule({
@@ -44,7 +50,7 @@ export function HttpLoaderFactory(http: HttpClient) {
             loader: {
                 provide: TranslateLoader,
                 useFactory: (HttpLoaderFactory),
-                deps: [HttpClient]
+                deps: [HttpClient, NgxElectronService]
             }
         }),
         ...((environment.production) ? [] : [

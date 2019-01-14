@@ -221,6 +221,18 @@ export class NgxElectronService {
         return this.ipcRenderer.sendSync('ngx-electron-get-win-id-by-key', key);
     }
 
+    isServer() {
+        return this.ipcRenderer.sendSync('ngx-electron-is-server');
+    }
+
+    getPort() {
+        return this.ipcRenderer.sendSync('ngx-electron-get-port');
+    }
+
+    getHost() {
+        return this.ipcRenderer.sendSync('ngx-electron-get-host');
+    }
+
     /**
      * 设置tray菜单
      * @param template

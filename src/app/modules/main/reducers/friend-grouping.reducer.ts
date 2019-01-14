@@ -10,7 +10,7 @@ export interface State extends EntityState<FriendGrouping> {
 
 export const adapter: EntityAdapter<FriendGrouping> = createEntityAdapter<FriendGrouping>({
     selectId: (friendGroup: FriendGrouping) => friendGroup.id,
-    sortComparer: (fg1, fg2) => fg1.sort * fg2.sort >= 0 ? fg1.sort - fg2.sort : -fg1.sort
+    sortComparer: (fg1, fg2) => fg1.sort - fg2.sort
 });
 
 
