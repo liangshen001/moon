@@ -24,12 +24,6 @@
       "@ngx-electron/core/*": [
         "dist/ngx-electron/core/*"
       ],
-      "@ngx-electron/main": [
-        "dist/ngx-electron/main"
-      ],
-      "@ngx-electron/main/*": [
-        "dist/ngx-electron/main/*"
-      ],
       "@ngx-electron/data": [
         "dist/ngx-electron/data"
       ],
