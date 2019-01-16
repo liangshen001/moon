@@ -1,35 +1,63 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
 import {SearchModel} from '../../../../models/search.model';
 import {ChatType} from '../../../../enums/chat-type';
+import {filter, map, pluck, switchMap} from 'rxjs/operators';
+import {combineLatest, Observable} from 'rxjs';
+import {select, Store} from '@ngrx/store';
+import {
+    getAllUserFriends,
+    getUserEntities,
+    getFriendGroupingEntities
+} from '../../../../reducers';
+import {User} from '../../../../../../models/user.model';
+import {UserFriend} from '../../../../models/user-friend.model';
 
 @Component({
-  selector: 'app-home-search-friend',
-  templateUrl: './home-search.component.html',
-  styleUrls: ['./home-search.component.scss']
+    selector: 'app-home-search',
+    templateUrl: './home-search.component.html',
+    styleUrls: ['./home-search.component.scss']
 })
 export class HomeSearchComponent implements OnInit {
 
-  privateSearchs: SearchModel[];
-  groupSearchs: SearchModel[];
-  groupChatType: ChatType.GROUP;
-  privateChatType: ChatType.FRIEND;
+    friendSearchs$: Observable<SearchModel[]>;
+    groupSearchs: SearchModel[];
+    key$: Observable<string>;
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private httpClient: HttpClient) { }
+    constructor(private activatedRoute: ActivatedRoute,
+                private store$: Store<any>) {
+    }
 
-  ngOnInit() {
-    // this.activatedRoute.params.subscribe((params) => {
-    //   this.httpClient.get<CommonResponseModel<SearchModel[]>>(`http://${ environment.domain }/chat/search/findPrivateSearchs?key=${ params['key'] }`)
-    //     .subscribe(res => this.privateSearchs = res.data);
-    //   this.httpClient.get<CommonResponseModel<SearchModel[]>>(`http://${ environment.domain }/chat/search/findGroupSearchs?key=${ params['key'] }`)
-    //     .subscribe(res => this.groupSearchs = res.data);
-    // });
-  }
+    ngOnInit() {
+        this.key$ = this.activatedRoute.params.pipe(
+            pluck('key')
+        );
+        const userFriends$ = this.store$.pipe(
+            select(getAllUserFriends)
+        );
+        const userEntities$ = this.store$.pipe(
+            select(getUserEntities)
+        );
+        const friendGroupingEntities$ = this.store$.pipe(
+            select(getFriendGroupingEntities)
+        );
+        this.friendSearchs$ = combineLatest(this.key$, userFriends$,
+            userEntities$, friendGroupingEntities$).pipe(
+                map(([key, userFriends, userEntities, friendGroupingEntities]) =>
+                    userFriends.map(userFriend => ({
+                        user: userEntities[userFriend.friendId],
+                        friendGrouping: friendGroupingEntities[userFriend.friendGroupingId]
+                    })).map(({user, friendGrouping}) => ({
+                        id: user.id,
+                        name: user.name,
+                        imageUrl: user.imageUrl,
+                        desc: friendGrouping.type,
+                        type: ChatType.FRIEND,
+                        key
+                    })).filter(search => search.name.includes(key))
+                )
+            );
+    }
 
-  isHidden(searchs: SearchModel[]): boolean {
-    return !searchs || searchs.length === 0;
-  }
 
 }
