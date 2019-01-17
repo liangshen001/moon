@@ -58,7 +58,7 @@ export class ElectronWindowService {
 
 
     openHome(routerUrl: string, loginSuccessAction) {
-        debugger;
+        // debugger;
         console.log('test');
         this.electronService.remote.getCurrentWindow().hide();
         const win = this.electronStoreService.openPage(`home/${routerUrl}`, {
