@@ -1,0 +1,17 @@
+<div class="row-container"
+     [class.draging]="dragging"
+     ngxRow
+     [focusable]="false">
+  <span class="float-left">
+    <img [src]="search?.imageUrl" draggable="false">
+  </span>
+    <div>
+        <div class="name">
+            <span>{{search?.name}}</span>
+            <span class="subtitle">{{search?.desc}}</span>
+        </div>
+        <div class="desc">
+            <small>{{search?.desc}}</small>
+        </div>
+    </div>
+</div>

@@ -144,7 +144,8 @@ export class HomeIndexComponent implements OnInit, OnDestroy {
         // 监听搜索框中值的变化
         this._subs.push(this.searchControl.valueChanges.pipe(
             debounceTime(400),
-            distinctUntilChanged()
+            distinctUntilChanged(),
+            tap(console.log)
         ).subscribe(key => this.router.navigate(['home/search', key])));
     }
 
@@ -268,16 +269,15 @@ export class HomeIndexComponent implements OnInit, OnDestroy {
         // 这里需要异步 因为搜索框需要在显示 并渲染之后
         setTimeout(() => {
             // 转到搜索路由
-            this.router.navigateByUrl('home/search');
-            // this.router.navigate(['search', this.searchControl.value ? this.searchControl.value : '']);
+            this.router.navigateByUrl('home/search/');
             // 让搜索框获得焦点
             this.searchInput.nativeElement.focus();
         });
     }
 
     returnChatList(): void {
-        this.router.navigate(['home/chat-list']);
-        this.isSearch = false;
+        // this.router.navigate(['home/chat-list']);
+        // this.isSearch = false;
     }
 
     changeOnlineStatus(onlineStatus: OnlineStatus) {

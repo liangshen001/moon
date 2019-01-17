@@ -11,7 +11,7 @@ const routes: Routes = [{
         path: 'chat-list',
         component: HomeChatListComponent
     }, {
-        path: 'search',
+        path: 'search/:key',
         component: HomeSearchComponent
     }/*, {
         path: 'chat-room',

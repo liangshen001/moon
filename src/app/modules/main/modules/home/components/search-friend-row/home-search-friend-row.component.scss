@@ -1,0 +1,32 @@
+.row-container {
+  height: 54px;
+  padding: 5px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  float: left;
+  width: 100%;
+  outline: 0;
+  img {
+    float: left;
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+    margin-right: 5px;
+  }
+  .subtitle, .desc {
+    color: #7f7f7f;
+  }
+}
+
+.gray-img {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+}
+
+

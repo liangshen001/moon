@@ -171,41 +171,6 @@
         }
       }
     },
-    "@ngx-electron/main": {
-      "root": "projects/ngx-electron/main",
-      "sourceRoot": "projects/ngx-electron/main/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/ngx-electron/main/tsconfig.lib.json",
-            "project": "projects/ngx-electron/main/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ngx-electron/main/src/test.ts",
-            "tsConfig": "projects/ngx-electron/main/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-electron/main/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ngx-electron/main/tsconfig.lib.json",
-              "projects/ngx-electron/main/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "@ngx-electron/data": {
       "root": "projects/ngx-electron/data",
       "sourceRoot": "projects/ngx-electron/data/src",
