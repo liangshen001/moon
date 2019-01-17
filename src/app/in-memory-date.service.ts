@@ -454,10 +454,11 @@ export class InMemoryDateService implements InMemoryDbService {
 
     // HTTP GET interceptor
     get(reqInfo: RequestInfo) {
+        debugger;
         const collectionName = reqInfo.collectionName;
         if (collectionName === 'userConfigs') {
             return this.getUserConfigs(reqInfo);
-        } else if (collectionName === 'i18n') {
+        } else if (collectionName === 'i18n' || collectionName === 'assets') {
             return this.getI18nJson(reqInfo);
         }
         return undefined; // let the default GET handle all others

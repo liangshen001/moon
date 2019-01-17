@@ -30,6 +30,7 @@
         "@ngx-electron/core:build": "ng build @ngx-electron/core",
         "@ngx-electron/data:build": "ng build @ngx-electron/data",
         "@ngx-electron/main:build": "tsc -p ./projects/ngx-electron/main && npm link ./projects/ngx-electron/main",
+        "@ngx-electron/cli:build": "tsc -p ./projects/ngx-electron/cli && npm link ./projects/ngx-electron/cli",
         "ngx-message-editor:build": "ng build ngx-message-editor",
         "ngx-mat-dynamic-form:build": "ng build ngx-mat-dynamic-form",
         "ngx-mat-dynamic-form:publish": "npm run ngx-mat-dynamic-form:build && npm publish dist/ngx-mat-dynamic-form",
