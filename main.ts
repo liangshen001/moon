@@ -2,6 +2,7 @@ import {app, BrowserWindow, ipcMain, nativeImage} from 'electron';
 import {screenShot} from './electron/shot-screen';
 import * as dotenv from 'dotenv';
 import {createTray, createWindow, initElectronMainIpcListener, isMac} from '@ngx-electron/main';
+import * as path from 'path';
 
 let loginWin, homeWin: BrowserWindow;
 initElectronMainIpcListener();
@@ -23,11 +24,12 @@ ipcMain.on('switch-account', () => {
 });
 
 function init() {
-    console.log(process.platform);
-    createTray('icon/icon.ico');
 
-    // const image = path.join(app.getAppPath(), `/dist/${app.getName()}/assets/icon/icon.ico`);
-    // console.log(nativeImage.createFromPath(image).toDataURL());
+    const image = path.join(app.getAppPath(), `/dist/${app.getName()}/assets/icon/logo.png`);
+    console.log(nativeImage.createFromPath(image).toDataURL());
+    console.log(process.platform);
+    createTray('icon/logo.png');
+
     loginWin = createWindow('auth', {
         width: 439,
         height: 340,

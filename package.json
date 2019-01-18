@@ -4,8 +4,9 @@
     "main": "main.js",
     "scripts": {
         "ng": "ng",
-        "start": "ngx-electron . --server --hmr",
-        "start2": "ng serve --port 4200",
+        "ngx-electron:server": "ngx-electron server . --hmr",
+        "ngx-electron:local": "ngx-electron local .",
+        "start": "ng serve --port 4200",
         "start:electron": "npm run build:electron && ng build && electron .",
         "start:local": "npm-run-all -p ng:serve electron:serve",
         "start:prod": "npm-run-all -p ng:serve  -- --configuration=production electron:serve",
