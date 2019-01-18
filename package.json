@@ -4,8 +4,8 @@
     "main": "main.js",
     "scripts": {
         "ng": "ng",
-        "ngx-electron:server": "ngx-electron server . --hmr",
-        "ngx-electron:local": "ngx-electron local .",
+        "ngx-electron:server": "ngx-electron server-start . --hmr",
+        "ngx-electron:local": "ngx-electron local-start .",
         "start": "ng serve --port 4200",
         "start:electron": "npm run build:electron && ng build && electron .",
         "start:local": "npm-run-all -p ng:serve electron:serve",
@@ -111,6 +111,7 @@
         "tslib": "^1.9.0",
         "tslint": "~5.11.0",
         "typescript": "~3.1.6",
-        "wait-on": "^2.1.0"
+        "wait-on": "^2.1.0",
+        "fs-extra": "^7.0.1"
     }
 }
