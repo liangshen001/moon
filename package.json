@@ -41,7 +41,8 @@
         "ngx-row:publish": "npm run ngx-row:build && npm publish dist/ngx-row",
         "@ngx-electron/core:publish": "npm run @ngx-electron/core:build && npm run npm:scope:ngx-electron && npm publish --access public dist/ngx-electron/core",
         "@ngx-electron/data:publish": "npm run @ngx-electron/data:build && npm run npm:scope:ngx-electron && npm publish --access public dist/ngx-electron/data",
-        "@ngx-electron/main:publish": "npm run @ngx-electron/main:build && npm run npm:scope:ngx-electron && npm publish --access public dist/ngx-electron/main"
+        "@ngx-electron/main:publish": "npm run @ngx-electron/main:build && npm run npm:scope:ngx-electron && npm publish --access public projects/ngx-electron/main",
+        "@ngx-electron/cli:publish": "npm run @ngx-electron/cli:build && npm run npm:scope:ngx-electron && npm publish --access public projects/ngx-electron/cli"
     },
     "private": true,
     "dependencies": {

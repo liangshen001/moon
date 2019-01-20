@@ -41,9 +41,7 @@ export function HttpLoaderFactory(http: HttpClient, electronService: NgxElectron
         BrowserAnimationsModule,
         StoreModule.forRoot(reducers, {metaReducers}),
         EffectsModule.forRoot(effects),
-        NgxElectronCoreModule.forRoot({
-            isDebugger: true
-        }),
+        NgxElectronCoreModule.forRoot(),
         NgxElectronDataModule.forRoot(),
         DBModule.provideDB(schema),
         TranslateModule.forRoot({
