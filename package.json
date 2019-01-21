@@ -81,7 +81,7 @@
         "zone.js": "~0.8.26"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "~0.10.0",
+        "@angular-devkit/build-angular": "^0.12.2",
         "@angular-devkit/build-ng-packagr": "~0.10.0",
         "@angular/cli": "~7.0.6",
         "@angular/compiler-cli": "~7.0.0",
@@ -96,6 +96,7 @@
         "electron-builder": "20.14.7",
         "electron-reload": "1.2.2",
         "electron-updater": "^3.1.2",
+        "fs-extra": "^7.0.1",
         "jasmine-core": "~2.99.1",
         "jasmine-spec-reporter": "~4.2.1",
         "karma": "~3.0.0",
@@ -112,7 +113,6 @@
         "tslib": "^1.9.0",
         "tslint": "~5.11.0",
         "typescript": "~3.1.6",
-        "wait-on": "^2.1.0",
-        "fs-extra": "^7.0.1"
+        "wait-on": "^2.1.0"
     }
 }
