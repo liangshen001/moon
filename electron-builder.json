@@ -1,0 +1,28 @@
+{
+  "productName": "moon",
+  "directories": {
+    "output": "dist/release/"
+  },
+  "files": [
+    "dist/moon/*",
+    "main.js"
+  ],
+  "win": {
+    "icon": "dist",
+    "target": [
+      "portable"
+    ]
+  },
+  "mac": {
+    "icon": "dist",
+    "target": [
+      "dmg"
+    ]
+  },
+  "linux": {
+    "icon": "dist",
+    "target": [
+      "AppImage"
+    ]
+  }
+}

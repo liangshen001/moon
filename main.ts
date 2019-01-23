@@ -1,5 +1,5 @@
 import {app, BrowserWindow, ipcMain, nativeImage} from 'electron';
-import {screenShot} from './electron/shot-screen';
+// import {screenShot} from './electron/shot-screen';
 import * as dotenv from 'dotenv';
 import {createTray, createWindow, initElectronMainIpcListener, isMac} from '@ngx-electron/main';
 import * as path from 'path';
@@ -12,7 +12,7 @@ try {
     console.log('asar');
 }
 
-ipcMain.on('shot-screen', () => screenShot());
+// ipcMain.on('shot-screen', () => screenShot());
 
 ipcMain.on('switch-account', () => {
     // loginWin = createLoginWindow(appTray);
@@ -30,7 +30,7 @@ function init() {
     console.log(process.platform);
     createTray('icon/logo.png');
 
-    loginWin = createWindow('auth', {
+    loginWin = createWindow('test/test1', {
         width: 439,
         height: 340,
         alwaysOnTop: true,

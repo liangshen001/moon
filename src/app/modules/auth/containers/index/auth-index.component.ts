@@ -43,7 +43,6 @@ export class AuthIndexComponent implements OnInit {
     electron: boolean;
 
     constructor(private windowControlService: ElectronWindowService,
-                private httpClient: HttpClient,
                 private store$: Store<any>,
                 private electronService: NgxElectronService) {}
 
