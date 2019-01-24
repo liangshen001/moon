@@ -1,36 +1,24 @@
 import {app, BrowserWindow, ipcMain, nativeImage} from 'electron';
 // import {screenShot} from './electron/shot-screen';
-import * as dotenv from 'dotenv';
+// import * as dotenv from 'dotenv';
 import {createTray, createWindow, initElectronMainIpcListener, isMac} from '@ngx-electron/main';
 import * as path from 'path';
 
-let loginWin, homeWin: BrowserWindow;
-initElectronMainIpcListener();
-try {
-    dotenv.config();
-} catch {
-    console.log('asar');
-}
+// try {
+//     dotenv.config();
+// } catch {
+//     console.log('asar');
+// }
 
 // ipcMain.on('shot-screen', () => screenShot());
 
-ipcMain.on('switch-account', () => {
-    // loginWin = createLoginWindow(appTray);
-    loginWin.on('closed', () => {
-        app.quit();
-    });
-    homeWin.close();
-    homeWin = null;
-});
+let loginWin, homeWin: BrowserWindow;
+
 
 function init() {
+    // createTray('icon/logo.png');
 
-    const image = path.join(app.getAppPath(), `/dist/${app.getName()}/assets/icon/logo.png`);
-    console.log(nativeImage.createFromPath(image).toDataURL());
-    console.log(process.platform);
-    createTray('icon/logo.png');
-
-    loginWin = createWindow('test/test1', {
+    loginWin = createWindow('auth', {
         width: 439,
         height: 340,
         alwaysOnTop: true,
@@ -45,6 +33,15 @@ function init() {
     // loginWin = createLoginWindow(appTray);
     loginWin.on('close', () => app.quit());
 }
+initElectronMainIpcListener();
+ipcMain.on('switch-account', () => {
+    // loginWin = createLoginWindow(appTray);
+    loginWin.on('closed', () => {
+        app.quit();
+    });
+    homeWin.close();
+    homeWin = null;
+});
 
 
 // This method will be called when Electron has finished
