@@ -283,9 +283,8 @@ export class ElectronWindowService {
         }];
         this.electronService.tray.setContextMenuTemplate(template);
         this.electronService.tray.setToolTip(this.electronService.remote.app.getName());
-        this.electronService.tray.on('click', () => {
-            this.electronService.remote.getCurrentWindow().show();
-        });
+        this.electronService.tray.on('click',
+            () => this.electronService.remote.getCurrentWindow().show());
     }
 
     initHomeTray() {

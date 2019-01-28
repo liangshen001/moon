@@ -1,22 +1,15 @@
 import {app, BrowserWindow, ipcMain, nativeImage} from 'electron';
 // import {screenShot} from './electron/shot-screen';
-// import * as dotenv from 'dotenv';
-import {createTray, createWindow, initElectronMainIpcListener, isMac} from '@ngx-electron/main';
-import * as path from 'path';
+import {createWindow, initElectronMainIpcListener, isMac} from '@ngx-electron/main';
 
-// try {
-//     dotenv.config();
-// } catch {
-//     console.log('asar');
-// }
 
 // ipcMain.on('shot-screen', () => screenShot());
 
-let loginWin, homeWin: BrowserWindow;
+let loginWin: BrowserWindow;
 
+initElectronMainIpcListener('icon/logo.png');
 
 function init() {
-    // createTray('icon/logo.png');
 
     loginWin = createWindow('auth', {
         width: 439,
@@ -33,14 +26,12 @@ function init() {
     // loginWin = createLoginWindow(appTray);
     loginWin.on('close', () => app.quit());
 }
-initElectronMainIpcListener();
+
 ipcMain.on('switch-account', () => {
     // loginWin = createLoginWindow(appTray);
     loginWin.on('closed', () => {
         app.quit();
     });
-    homeWin.close();
-    homeWin = null;
 });
 
 
@@ -53,7 +44,7 @@ app.on('ready', init);
 app.on('window-all-closed', () => {
     // On OS X it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
-    if (process.platform !== 'darwin') {
+    if (!isMac()) {
         app.quit();
     }
 });
