@@ -23,7 +23,7 @@
     "build:dev": "npm run build -- --configuration=dev",
     "build:prod": "npm run build -- --configuration=production",
     "build:linux": "npm run build:prod && npx electron-builder build --linux",
-    "build:win": "ngx-electron build . --win",
+    "build:win": "ngx-electron build . -m",
     "build:windows:dev": "npm run build:electron && npm run build:dev && npx electron-builder build --windows",
     "build:mac": "npm run build:electron && npm run build:prod && npx electron-builder build --mac",
     "npm:scope:ngx-electron": "npm config set scope ngx-electron",
