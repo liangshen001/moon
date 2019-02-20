@@ -1,6 +1,6 @@
 import {app, BrowserWindow, ipcMain, nativeImage} from 'electron';
 // import {screenShot} from './electron/shot-screen';
-import {createWindow, initElectronMainIpcListener, isMac} from '@ngx-electron/main';
+import {createWindow, initElectronMainIpcListener, isMac} from 'projects/ngx-electron/main/index';
 
 
 // ipcMain.on('shot-screen', () => screenShot());
