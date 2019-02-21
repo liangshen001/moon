@@ -1,7 +1,7 @@
 {
   "name": "moon",
   "version": "0.0.1",
-  "main": "main.js",
+  "main": "dist/electron/main.js",
   "author": {
     "name": "liangshen001",
     "email": "wangliang520wl@hotmail.com"
@@ -46,7 +46,6 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "@ngx-electron/main": "0.0.4",
     "tslib": "^1.9.3"
   },
   "devDependencies": {
