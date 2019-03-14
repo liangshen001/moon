@@ -1,16 +1,16 @@
 import {app, BrowserWindow, ipcMain, nativeImage} from 'electron';
 // import {screenShot} from './electron/shot-screen';
-import {createWindow, initElectronMainIpcListener, isMac} from '@ngx-electron/main';
+import {createTray, createWindow, initElectronMainIpcListener, isMac} from '@ngx-electron/main';
 
 
 // ipcMain.on('shot-screen', () => screenShot());
 
 let loginWin: BrowserWindow;
+initElectronMainIpcListener();
 
-initElectronMainIpcListener('icon/logo.png');
 
 function init() {
-
+    createTray('icon/logo.png');
     loginWin = createWindow('auth', {
         width: 439,
         height: 340,
