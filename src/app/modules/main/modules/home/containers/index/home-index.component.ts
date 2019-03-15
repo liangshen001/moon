@@ -149,6 +149,11 @@ export class HomeIndexComponent implements OnInit, OnDestroy {
         ).subscribe(key => this.router.navigate(['home/search', key])));
     }
 
+    openSystemSettins() {
+        this.isShowPopup = false;
+        this.electronWindowService.openSystemSettings();
+    }
+
     subscribeStomp(userId: number) {
         // // 监听好友聊天消息
         this._subs.push(this.stompService.subscribe(`/user/${userId}/friendMessage`).pipe(

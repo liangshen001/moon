@@ -3,7 +3,7 @@ import {User} from '../../../../../../models/user.model';
 import {select, Store} from '@ngrx/store';
 import {Observable} from 'rxjs/internal/Observable';
 import {FriendGrouping} from '../../../../models/friend-grouping.model';
-import {map, take} from 'rxjs/operators';
+import {map, take, tap} from 'rxjs/operators';
 import {getAllFriendGroupings, getAllUserFriends, getAllUsers, getTotalUserFriends} from '../../../../reducers';
 import {FriendGroupingType} from '../../../../models/friend-grouping-type.enum';
 import {UserFriend} from '../../../../models/user-friend.model';
@@ -69,10 +69,18 @@ export class CreateGroupInviteComponent implements OnInit {
      * @param {User} user
      */
     addInvitee(user: User) {
-        const currentInviterIds = this.invitees.map(invitee => invitee.id);
-        if (!currentInviterIds.includes(user.id)) {
-            this.invitees.push(user);
-        }
+        this.store$.pipe(
+            select(getUser),
+            take(1)
+        ).subscribe(createUser => {
+            // 不添加自己
+            if (createUser.id !== user.id) {
+                const currentInviterIds = this.invitees.map(invitee => invitee.id);
+                if (!currentInviterIds.includes(user.id)) {
+                    this.invitees.push(user);
+                }
+            }
+        });
     }
 
     /**

@@ -1,7 +1,15 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatBadgeModule, MatButtonModule, MatIconModule, MatInputModule, MatMenuModule, MatTabsModule} from '@angular/material';
+import {
+    MatBadgeModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatTabsModule
+} from '@angular/material';
 
 import {HomeRoutingModule} from './home-routing.module';
 import {components} from './components';
@@ -29,6 +37,7 @@ import {TranslateModule} from '@ngx-translate/core';
         MatInputModule,
         MatBadgeModule,
         MatMenuModule,
+        MatListModule,
         NgxElectronCoreModule,
         NgxElectronDataModule,
         NgxElementResizableModule,

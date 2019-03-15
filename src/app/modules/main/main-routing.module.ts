@@ -25,6 +25,9 @@ const routes: Routes = [{
     }, {
         path: 'create-group',
         loadChildren: './modules/create-group/create-group.module#CreateGroupModule'
+    }, {
+        path: 'system-settings',
+        loadChildren: './modules/system-settings/system-settings.module#SystemSettingsModule'
     }]
 }];
 

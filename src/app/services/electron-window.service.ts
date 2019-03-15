@@ -56,10 +56,25 @@ export class ElectronWindowService {
         win.on('close', () => this.electronService.remote.app.quit());
     }
 
+    openSystemSettings(routerUrl = 'basic-settings') {
+        this.electronStoreService.openPage(`system-settings/${routerUrl}`, {
+            width: 500,
+            height: 400
+        }, {
+            key: 'system-settings',
+            actions: [
+                this.store$.pipe(
+                    select(getUserConfig),
+                    filter(uc => !!uc),
+                    take(1),
+                    map(userConfig => new LoadUserConfigSuccess(userConfig))
+                )
+            ]
+        });
+    }
+
 
     openHome(routerUrl: string, loginSuccessAction) {
-        // debugger;
-        console.log('test');
         this.electronService.remote.getCurrentWindow().hide();
         const win = this.electronStoreService.openPage(`home/${routerUrl}`, {
             width: 298,

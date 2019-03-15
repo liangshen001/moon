@@ -9,18 +9,12 @@ import {
     CheckboxFormControl,
     DynamicFormField,
     InputFormControl,
-    NgxMatDynamicCheckboxComponent,
     NgxMatDynamicFormComponent,
-    NgxMatDynamicInputComponent,
-    NgxMatDynamicRadioComponent,
-    NgxMatDynamicSelectComponent,
     RadioFormControl,
     SelectFormControl,
-    selectInputControlTranslate,
     SelectInputFormControl
 } from 'ngx-mat-dynamic-form';
 import {CreateGroupType} from '../../models/create-group-type';
-import {RadioFormControlOptions} from '../../../../../../../../projects/ngx-mat-dynamic-form/src/lib/models';
 
 @Component({
     selector: 'app-create-group-form',
@@ -131,8 +125,7 @@ export class CreateGroupFormComponent implements OnInit {
                     labelWidth: '40%',
                     show: () => this.dynamicForm.form.get('schoolIdentity').value === 0 ||
                         this.dynamicForm.form.get('schoolIdentity').value === 1,
-                    formControls: [<SelectInputFormControl>({
-                        type: selectInputControlTranslate,
+                    formControls: [new SelectInputFormControl({
                         options: this.createGroupService.teachSubjects,
                         width: '67%',
                         validator: Validators.required,
@@ -180,8 +173,7 @@ export class CreateGroupFormComponent implements OnInit {
             case CreateGroupType.HOBBIES_INTERESTS:
                 this.fields.push({
                     label: '兴趣',
-                    formControls: [<SelectInputFormControl>({
-                        type: selectInputControlTranslate,
+                    formControls: [new SelectInputFormControl({
                         options: this.createGroupService.interests,
                         validator: Validators.required,
                         placeholder: '独乐乐不如众乐乐,你们的共同兴趣是?',
@@ -195,8 +187,7 @@ export class CreateGroupFormComponent implements OnInit {
             case CreateGroupType.VOCATION_COMMUNICATION:
                 this.fields.push({
                     label: '行业',
-                    formControls: [<SelectInputFormControl>({
-                        type: selectInputControlTranslate,
+                    formControls: [new SelectInputFormControl({
                         options: this.createGroupService.vocations,
                         validator: Validators.required,
                         placeholder: '术业有专攻，同行皆朋友，你们的行业是?',
@@ -210,8 +201,7 @@ export class CreateGroupFormComponent implements OnInit {
             case CreateGroupType.LIFE_LEISURE:
                 this.fields.push({
                     label: '生活休闲',
-                    formControls: [<SelectInputFormControl>({
-                        type: selectInputControlTranslate,
+                    formControls: [new SelectInputFormControl({
                         options: this.createGroupService.lifeLeisure,
                         validator: Validators.required,
                         placeholder: '购物、旅游、美食? 你们最爱的休闲方式是?',
@@ -225,8 +215,7 @@ export class CreateGroupFormComponent implements OnInit {
             case CreateGroupType.STUDY_EXAM:
                 this.fields.push({
                     label: '学习考试',
-                    formControls: [<SelectInputFormControl>({
-                        type: selectInputControlTranslate,
+                    formControls: [new SelectInputFormControl({
                         options: this.createGroupService.studyExams,
                         validator: Validators.required,
                         placeholder: '公务员、英语、考研、注会? 你们在为哪门啃书?',
@@ -332,6 +321,7 @@ export class CreateGroupFormComponent implements OnInit {
     }
 
     next() {
+        this.dynamicForm.markAllTouched();
         if (this.dynamicForm.form.valid) {
             this.createGroupService.formValue = this.dynamicForm.form.value;
             this.router.navigateByUrl('/create-group/invite/');

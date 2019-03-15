@@ -45,30 +45,36 @@ header {
   display: inline-block;
   background: url(../../../../../../../assets/images/online-status/online.png) no-repeat;
 }
+
 .offline {
   width: 20px;
   height: 20px;
   display: inline-block;
   background: url(../../../../../../../assets/images/online-status/offline.png) no-repeat;
 }
+
 .leave {
   width: 20px;
   height: 20px;
   display: inline-block;
   background: url(../../../../../../../assets/images/online-status/leave.png) no-repeat;
 }
+
 .stealth {
   width: 20px;
   height: 20px;
   display: inline-block;
   background: url(../../../../../../../assets/images/online-status/stealth.png) no-repeat;
 }
+
 .online-status-btn {
   margin-left: -12px;
 }
+
 .online-status-menu-item {
   margin: 0 3px -3px -8px;
 }
+
 .busyness {
   width: 20px;
   height: 20px;
@@ -115,6 +121,7 @@ header {
     }
   }
 }
+
 .panel-content {
   top: 150px;
   position: absolute;
@@ -145,7 +152,6 @@ header {
     }
   }
 }
-
 
 .switch-account {
   width: 75px;
@@ -187,6 +193,7 @@ nav {
   -webkit-box-shadow: 0px 0px 20px 10px #abcdef;
   box-shadow: 0px 0px 20px 10px #abcdef;
 }
+
 .skin-backgroud {
   background: url(../../../../../../../assets/images/backgroud.png) 1px 0 no-repeat;
   width: 28px;
@@ -199,4 +206,14 @@ nav {
     background: white;
     opacity: 0.9;
   }
+}
+
+.menu-button-item {
+  button {
+    width: 100%;
+  }
+}
+.menu-button-item-footer {
+  position: absolute;
+  bottom: 0;
 }

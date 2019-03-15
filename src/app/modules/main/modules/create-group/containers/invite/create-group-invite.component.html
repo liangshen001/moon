@@ -27,7 +27,7 @@
 <div class="right-container">
     <div class="right-title">
         <span>已选成员：</span>
-        <span class="select-rate">{{invitees.length}} / {{total$ | async}}</span>
+        <span class="select-rate">{{invitees.length + 1}} / {{total$ | async}}</span>
     </div>
     <app-create-group-friend-row [friend]="user$ | async"></app-create-group-friend-row>
     <app-create-group-friend-row *ngFor="let invitee of invitees"

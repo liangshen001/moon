@@ -9,10 +9,16 @@
     <div class="content">
         <nav>
             <button mat-button routerLink="/appearance-setting/skin-setting"
-                    [class.actived-btn]="activated('skin-setting')"><mat-icon>palette</mat-icon>皮肤设置</button>
+                    [class.actived-btn]="activated('skin-setting')">
+                <mat-icon>palette</mat-icon>
+                <span>皮肤设置</span>
+            </button>
             <!--<button mat-button>场景秀</button>-->
             <button mat-button routerLink="/appearance-setting/colourful-bubble"
-                    [class.actived-btn]="activated('colourful-bubble')"><mat-icon>chat_bubble</mat-icon>多彩气泡</button>
+                    [class.actived-btn]="activated('colourful-bubble')">
+                <mat-icon>chat_bubble</mat-icon>
+                <span>多彩气泡</span>
+            </button>
             <!--<button mat-button>界面管理</button>-->
         </nav>
         <section>
