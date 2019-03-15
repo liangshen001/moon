@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.label-div {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+}
+
+.content-div {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}

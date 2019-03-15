@@ -1,0 +1,29 @@
+<ngx-electron-window [showCloseBtn]="true"
+                     [showMiniBtn]="true"
+                     [background]="(userConfig$ | async).background">
+    <header>
+        <span style="color: white">
+            系统设置
+        </span>
+    </header>
+    <section>
+        <nav>
+            <button mat-button routerLink="/system-settings/basic-settings"
+                    [class.actived-btn]="activated('basic-settings')">
+                <mat-icon>settings</mat-icon>
+                <span>基本设置</span>
+            </button>
+            <button mat-button routerLink="/system-settings/security-settings"
+                    [class.actived-btn]="activated('security-settings')">
+                <mat-icon>security</mat-icon>
+                <span>安全设置</span>
+            </button>
+            <button mat-button routerLink="/system-settings/permission-settings"
+                    [class.actived-btn]="activated('permission-settings')">
+                <mat-icon>lock</mat-icon>
+                <span>权限设置</span>
+            </button>
+        </nav>
+        <router-outlet></router-outlet>
+    </section>
+</ngx-electron-window>

@@ -1,0 +1,15 @@
+section {
+  flex: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  height: 50px;
+  background: #edeeee;
+  display: flex;
+}
+.actived-btn {
+  color: #1177b6 !important;
+}
