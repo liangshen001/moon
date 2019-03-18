@@ -1,6 +1,11 @@
-<nav>
-  <button mat-button *ngFor="let title of titles">title</button>
-</nav>
-<section>
-  <ng-content></ng-content>
+<mat-button-toggle-group [(value)]="selectTitle">
+    <mat-button-toggle *ngFor="let settingsItem of settingsItems"
+                       [value]="settingsItem.title"
+                       (click)="clickTitle(settingsItem.title)">
+        {{settingsItem.title}}
+    </mat-button-toggle>
+</mat-button-toggle-group>
+<section (scroll)="scroll($event)" #scrollContainer>
+    <ng-content></ng-content>
+    <div #bottomDiv></div>
 </section>

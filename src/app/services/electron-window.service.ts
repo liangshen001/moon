@@ -58,8 +58,8 @@ export class ElectronWindowService {
 
     openSystemSettings(routerUrl = 'basic-settings') {
         this.electronStoreService.openPage(`system-settings/${routerUrl}`, {
-            width: 500,
-            height: 400
+            width: 1000,
+            height: 800
         }, {
             key: 'system-settings',
             actions: [

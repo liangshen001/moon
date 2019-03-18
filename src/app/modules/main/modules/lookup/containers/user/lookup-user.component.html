@@ -1,16 +1,18 @@
-<form>
-    <mat-form-field style="width: 500px;">
-        <input matInput placeholder="请输入moon号/昵称" value="{{key}}">
-    </mat-form-field>
+<nav>
+    <div>
+        <mat-form-field>
+            <input matInput placeholder="请输入moon号/昵称" value="{{key}}">
+        </mat-form-field>
 
-    <button mat-raised-button class="lookup-button"
-            [style.background]="(userConfig$ | async)?.background">查询</button>
-</form>
+        <button mat-raised-button class="lookup-button"
+                [style.background]="(userConfig$ | async)?.background">查询</button>
+    </div>
+</nav>
 
 <div class="user-list-container">
     <div *ngFor="let user of users" class="user-item">
         <img [src]="user?.imageUrl" class="user-img" draggable="false">
-        <div>
+        <div class="user-list-right">
             <div class="user-name">{{user?.name}}</div>
             <div>aaaa</div>
             <div class="add-friend-btn" (click)="addFriend(user?.id)">

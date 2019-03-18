@@ -7,18 +7,18 @@ import {BasicSettingsComponent} from './containers/basic-settings/basic-settings
 import {SecuritySettingsComponent} from './containers/security-settings/security-settings.component';
 import {PermissionSettingsComponent} from './containers/permission-settings/permission-settings.component';
 import {
-    MatButtonModule,
+    MatButtonModule, MatButtonToggleModule,
     MatCheckboxModule,
     MatCommonModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule, MatSelectModule
 } from '@angular/material';
 import {NgxElectronCoreModule} from '@ngx-electron/core';
 import {NgxElectronDataModule} from '@ngx-electron/data';
-import { SettingsTemplateComponent } from './components/settings-template/settings-template.component';
-import { SettingsItemComponent } from './components/settings-item/settings-item.component';
+import {SettingsTemplateComponent} from './components/settings-template/settings-template.component';
+import {SettingsItemComponent} from './components/settings-item/settings-item.component';
 
 @NgModule({
     declarations: [IndexComponent, BasicSettingsComponent, SecuritySettingsComponent, PermissionSettingsComponent, SettingsTemplateComponent, SettingsItemComponent],
@@ -33,7 +33,9 @@ import { SettingsItemComponent } from './components/settings-item/settings-item.
         MatCheckboxModule,
         MatRadioModule,
         MatFormFieldModule,
-        MatInputModule
+        MatInputModule,
+        MatButtonToggleModule,
+        MatSelectModule
     ]
 })
 export class SystemSettingsModule {

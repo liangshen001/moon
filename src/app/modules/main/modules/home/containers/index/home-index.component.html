@@ -78,25 +78,14 @@
             </footer>
         </div>
 
-        <nav [hidden]="!isShowPopup">
-            <mat-selection-list class="menu-button-item-footer">
-                <mat-list-item class="menu-button-item">
-                    <button mat-button (click)="openSystemSettins()">设置</button>
-                </mat-list-item>
-                <mat-list-item class="menu-button-item">
-                    <button mat-button (click)="openSystemSettins()">设置</button>
-                </mat-list-item>
-                <mat-list-item class="menu-button-item">
-                    <button mat-button (click)="openSystemSettins()">设置</button>
-                </mat-list-item>
-                <mat-list-item class="menu-button-item">
-                    <button mat-button (click)="openSystemSettins()">设置</button>
-                </mat-list-item>
-                <mat-list-item>
-                    <button mat-stroked-button (click)="switchAccount()">切换账号</button>
-                    <button mat-stroked-button (click)="logout()">退出登录</button>
-                </mat-list-item>
-            </mat-selection-list>
+        <nav *ngIf="isShowPopup" [style.box-shadow]="'0 0 20px 10px ' + (userConfig$ | async)?.background">
+            <button mat-button class="nav-button" (click)="openSystemSettins()">设置</button>
+            <button mat-button class="nav-button" (click)="openSystemSettins()">设置</button>
+            <button mat-button class="nav-button" (click)="openSystemSettins()">设置</button>
+            <span class="button-group">
+                <button mat-stroked-button (click)="switchAccount()">切换账号</button>
+                <button mat-stroked-button (click)="logout()">退出登录</button>
+            </span>
         </nav>
     </ngx-electron-window>
 </div>

@@ -1,15 +1,21 @@
 section {
-  flex: auto;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
+    flex: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 
-nav {
-  height: 50px;
-  background: #edeeee;
-  display: flex;
+mat-button-toggle-group {
+    height: 50px;
+    min-height: 50px;
+    background: #edeeee;
 }
-.actived-btn {
-  color: #1177b6 !important;
+
+mat-button-toggle {
+    background: #edeeee;
+}
+
+.mat-button-toggle-checked {
+    background: #edeeee;
+    color: #1177b6 !important;
 }

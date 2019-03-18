@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Observable} from 'rxjs';
 import {UserConfig} from '../../../../models/user-config';
 import {select, Store} from '@ngrx/store';
 import {getUserConfig} from '../../../../reducers';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {MatButtonToggleGroup} from '@angular/material';
 
 @Component({
     selector: 'app-index',
@@ -14,18 +15,17 @@ export class IndexComponent implements OnInit {
 
     userConfig$: Observable<UserConfig>;
 
+    url: string;
+
     constructor(private store$: Store<any>,
-                private activatedRoute: ActivatedRoute) {
+                private router: Router) {
     }
 
     ngOnInit() {
+        this.url = this.router.url;
         this.userConfig$ = this.store$.pipe(
             select(getUserConfig)
         );
     }
 
-
-    activated(path: string) {
-        return this.activatedRoute.firstChild.routeConfig.path === path;
-    }
 }

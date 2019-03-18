@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit} from '@angular/core';
 
 @Component({
     selector: 'app-settings-item',
@@ -10,7 +10,7 @@ export class SettingsItemComponent implements OnInit {
     @Input()
     title: string;
 
-    constructor() {
+    constructor(public element: ElementRef) {
     }
 
     ngOnInit() {

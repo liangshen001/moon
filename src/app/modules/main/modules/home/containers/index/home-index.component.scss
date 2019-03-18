@@ -1,219 +1,234 @@
 
 header {
-  height: 151px;
-  line-height: normal;
-  padding-left: 0;
-  color: #fff;
-  .user-info-container {
-    padding-top: 46px;
-    padding-left: 15px;
-    height: 76px;
-    .user-img {
-      height: 65px;
-      width: 65px;
-      border-radius: 35px;
-      margin-right: 8px;
-      float: left;
-      border: 2px solid transparent;
-      -webkit-app-region: no-drag;
-      &:hover {
-        border-color: #00aaff !important;
-      }
+    height: 151px;
+    line-height: normal;
+    padding-left: 0;
+    color: #fff;
+    .user-info-container {
+        padding-top: 46px;
+        padding-left: 15px;
+        height: 76px;
+        .user-img {
+            height: 65px;
+            width: 65px;
+            border-radius: 35px;
+            margin-right: 8px;
+            float: left;
+            border: 2px solid transparent;
+            -webkit-app-region: no-drag;
+            &:hover {
+                border-color: #00aaff !important;
+            }
+        }
+        .saying-content {
+            display: block;
+            font-size: 17px;
+            border: 1px solid transparent;
+            width: 173px;
+            box-sizing: border-box;
+            -webkit-app-region: no-drag;
+            &:hover {
+                border: 1px solid black;
+            }
+        }
     }
-    .saying-content {
-      display: block;
-      font-size: 17px;
-      border: 1px solid transparent;
-      width: 173px;
-      box-sizing: border-box;
-      -webkit-app-region: no-drag;
-      &:hover {
-        border: 1px solid black;
-      }
-    }
-  }
 }
 
 .user-name {
-  max-width: 137px;
-  font-size: 20px;
+    max-width: 137px;
+    font-size: 20px;
 }
 
 .online {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  background: url(../../../../../../../assets/images/online-status/online.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url(../../../../../../../assets/images/online-status/online.png) no-repeat;
 }
 
 .offline {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  background: url(../../../../../../../assets/images/online-status/offline.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url(../../../../../../../assets/images/online-status/offline.png) no-repeat;
 }
 
 .leave {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  background: url(../../../../../../../assets/images/online-status/leave.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url(../../../../../../../assets/images/online-status/leave.png) no-repeat;
 }
 
 .stealth {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  background: url(../../../../../../../assets/images/online-status/stealth.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url(../../../../../../../assets/images/online-status/stealth.png) no-repeat;
 }
 
 .online-status-btn {
-  margin-left: -12px;
+    margin-left: -12px;
 }
 
 .online-status-menu-item {
-  margin: 0 3px -3px -8px;
+    margin: 0 3px -3px -8px;
 }
 
 .busyness {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  background: url(../../../../../../../assets/images/online-status/busyness.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url(../../../../../../../assets/images/online-status/busyness.png) no-repeat;
 }
 
 .search-container {
-  .search-icon {
-    position: absolute;
-    margin-top: 4px;
-    left: 10px;
-    font-size: 21px;
-  }
-  .close-icon {
-    position: absolute;
-    margin-top: 4px;
-    right: 10px;
-    font-size: 21px;
-  }
-  .search-input-blur {
-    width: 100%;
-    opacity: .2;
-    height: 28px;
-    background: white;
-    padding-left: 30px;
-    line-height: 28px;
-    font-size: 15px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  .search-input-focus {
-    width: 100%;
-    height: 28px;
-    border: none;
-    padding-left: 30px;
-    padding-right: 30px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    &:focus {
-      outline: none;
-      border-bottom: 1px solid gray;
+    .search-icon {
+        position: absolute;
+        margin-top: 4px;
+        left: 10px;
+        font-size: 21px;
     }
-  }
+    .close-icon {
+        position: absolute;
+        margin-top: 4px;
+        right: 10px;
+        font-size: 21px;
+    }
+    .search-input-blur {
+        width: 100%;
+        opacity: .2;
+        height: 28px;
+        background: white;
+        padding-left: 30px;
+        line-height: 28px;
+        font-size: 15px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .search-input-focus {
+        width: 100%;
+        height: 28px;
+        border: none;
+        padding-left: 30px;
+        padding-right: 30px;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        &:focus {
+            outline: none;
+            border-bottom: 1px solid gray;
+        }
+    }
 }
 
 .panel-content {
-  top: 150px;
-  position: absolute;
-  width: 100%;
-  background: white;
-  bottom: 0;
-  .chat-list-content {
-    bottom: 40px;
-    top: 0;
+    top: 150px;
     position: absolute;
     width: 100%;
-  }
-
-  footer {
-    height: 40px;
-    box-sizing: border-box;
-    border: 1px rgb(127, 131, 147);
-    border-top-style: solid;
+    background: white;
     bottom: 0;
-    position: absolute;
-    width: 100%;
-    button {
-      min-width: 33px !important;
-      padding: 0px;
-      height: 39px;
-      float: left;
-      color: rgb(127, 131, 147)
+    .chat-list-content {
+        bottom: 40px;
+        top: 0;
+        position: absolute;
+        width: 100%;
     }
-  }
+
+    footer {
+        height: 40px;
+        box-sizing: border-box;
+        border: 1px rgb(127, 131, 147);
+        border-top-style: solid;
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        button {
+            min-width: 33px !important;
+            padding: 0px;
+            height: 39px;
+            float: left;
+            color: rgb(127, 131, 147)
+        }
+    }
 }
 
 .switch-account {
-  width: 75px;
-  height: 25px;
-  line-height: 25px;
-  font-size: 12px;
-  bottom: 10px;
-  position: absolute;
-  text-align: center;
-  left: 10px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
+    width: 75px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    bottom: 10px;
+    position: absolute;
+    text-align: center;
+    left: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
 }
 
 .exit-logon {
-  width: 75px;
-  height: 25px;
-  line-height: 25px;
-  font-size: 12px;
-  bottom: 10px;
-  position: absolute;
-  text-align: center;
-  right: 10px;
-  border: 1px solid gray;
+    width: 75px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    bottom: 10px;
+    position: absolute;
+    text-align: center;
+    right: 10px;
+    border: 1px solid gray;
 }
 
 nav {
-  height: 250px;
-  float: left;
-  z-index: 999;
-  position: absolute;
-  width: 200px;
-  background: RGB(253, 253, 253);
-  bottom: 40px;
-  margin-bottom: 18px;
-  margin-left: 18px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 20px 10px #abcdef;
-  box-shadow: 0px 0px 20px 10px #abcdef;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 250px;
+    float: left;
+    z-index: 999;
+    position: absolute;
+    width: 200px;
+    background: RGB(253, 253, 253);
+    bottom: 40px;
+    margin-bottom: 18px;
+    margin-left: 18px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 20px 10px #abcdef;
+    box-shadow: 0 0 20px 10px #abcdef;
+    .nav-button {
+        flex: auto;
+    }
+    .button-group {
+        flex: 1 1 30px;
+        display: flex;
+        justify-content: space-around;
+        button {
+            margin: 10px 0;
+        }
+    }
 }
 
 .skin-backgroud {
-  background: url(../../../../../../../assets/images/backgroud.png) 1px 0 no-repeat;
-  width: 28px;
-  height: 28px;
-  border: none;
-  outline: none;
-  margin: 0;
-  float: right;
-  &:hover {
-    background: white;
-    opacity: 0.9;
-  }
+    background: url(../../../../../../../assets/images/backgroud.png) 1px 0 no-repeat;
+    width: 28px;
+    height: 28px;
+    border: none;
+    outline: none;
+    margin: 0;
+    float: right;
+    &:hover {
+        background: white;
+        opacity: 0.9;
+    }
 }
 
 .menu-button-item {
-  button {
-    width: 100%;
-  }
+    button {
+        width: 100%;
+    }
 }
+
 .menu-button-item-footer {
-  position: absolute;
-  bottom: 0;
+    position: absolute;
+    bottom: 0;
 }
