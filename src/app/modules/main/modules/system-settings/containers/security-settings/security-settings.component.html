@@ -1,1 +1,72 @@
-<app-settings-template></app-settings-template>
+<app-settings-template>
+    <app-settings-item title="密码">
+        <p>您设置了记住密码，分录时无须再输入。</p>
+        <p>
+            <button mat-stroked-button>取消记住密码</button>
+        </p>
+        <p>为了您的账号安全，请定期修改密码并密码保护</p>
+        <p>
+            <button mat-stroked-button>修改密码</button>
+            <button mat-stroked-button>申请密码保护</button>
+        </p>
+        <p>某些服务将用到独立密码</p>
+        <p>
+            <button mat-stroked-button>管理独立密码</button>
+        </p>
+    </app-settings-item>
+    <app-settings-item title="moon锁">
+        <p>
+            <mat-radio-group>
+                <mat-radio-button>使用moon密码解锁moon锁</mat-radio-button>
+                <mat-radio-button>使用独立密码解锁moon锁(moon密码也可解锁)</mat-radio-button>
+            </mat-radio-group>
+        </p>
+
+        <p>
+            <button>更改热键</button>
+            <button>自动锁定设置</button>
+        </p>
+    </app-settings-item>
+    <app-settings-item title="消息记录">
+        <p>
+            <mat-checkbox>登录moon时同步最近聊天记录</mat-checkbox>
+        </p>
+        <p>
+            <mat-checkbox>仅查看本机消息记录</mat-checkbox>
+        </p>
+        <p>
+            <mat-checkbox>退出moon时自动删除所有消息记录</mat-checkbox>
+        </p>
+        <p>如果您需要删除某个人或者某个群的消息记录，请使用消息管理器</p>
+        <p>
+            <button mat-stroked-button>打开消息管理器</button>
+        </p>
+        <p>你可以对全部消息记录删除</p>
+        <p>
+            <button mat-stroked-button>删除消息记录</button>
+        </p>
+        <p>
+            <mat-checkbox>启用消息记录加密</mat-checkbox>
+        </p>
+    </app-settings-item>
+    <app-settings-item title="安全更新">
+        <p>安全模块更新，可保障您的moon使用安全。</p>
+        <p>
+            <mat-radio-group>
+                <mat-radio-button>有安全更新时自动为我安装，无需提醒（推荐）</mat-radio-button>
+                <mat-radio-button>有安全更新酌，不自动安装</mat-radio-button>
+            </mat-radio-group>
+        </p>
+    </app-settings-item>
+    <app-settings-item title="文件传输">
+        <p>
+            <mat-radio-group>
+                <mat-radio-button>安全级 - 高</mat-radio-button>
+                <div>阻止接收任何文件</div>
+                <mat-radio-button>安全级 - 中（推荐）</mat-radio-button>
+                <div>阻止接收高安全风险文件（少数常用类型的文件 ）</div>
+                <mat-radio-button>安全级 - 低</mat-radio-button>
+            </mat-radio-group>
+        </p>
+    </app-settings-item>
+</app-settings-template>

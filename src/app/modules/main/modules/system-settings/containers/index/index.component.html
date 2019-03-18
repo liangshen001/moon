@@ -7,23 +7,40 @@
         </span>
     </header>
     <section>
-        <mat-button-toggle-group [value]="url">
-            <mat-button-toggle value="/system-settings/basic-settings"
-                               routerLink="/system-settings/basic-settings">
-                <mat-icon>settings</mat-icon>
-                <span>基本设置</span>
-            </mat-button-toggle>
-            <mat-button-toggle value="/system-settings/security-settings"
-                               routerLink="/system-settings/security-settings">
-                <mat-icon>security</mat-icon>
-                <span>安全设置</span>
-            </mat-button-toggle>
-            <mat-button-toggle value="/system-settings/permission-settings"
-                               routerLink="/system-settings/permission-settings">
-                <mat-icon>lock</mat-icon>
-                <span>权限设置</span>
-            </mat-button-toggle>
-        </mat-button-toggle-group>
+        <nav>
+            <mat-button-toggle-group [value]="path">
+                <mat-button-toggle value="basic-settings"
+                                   routerLink="/system-settings/basic-settings"
+                                   [queryParams]="{key: routerKey['basic-settings']}">
+                    <mat-icon>settings</mat-icon>
+                    <span>基本设置</span>
+                </mat-button-toggle>
+                <mat-button-toggle value="security-settings"
+                                   routerLink="/system-settings/security-settings"
+                                   [queryParams]="{key: routerKey['security-settings']}">
+                    <mat-icon>security</mat-icon>
+                    <span>安全设置</span>
+                </mat-button-toggle>
+                <mat-button-toggle value="permission-settings"
+                                   routerLink="/system-settings/permission-settings"
+                                   [queryParams]="{key: routerKey['permission-settings']}">
+                    <mat-icon>lock</mat-icon>
+                    <span>权限设置</span>
+                </mat-button-toggle>
+                <div class="search-key-container">
+                    <mat-form-field>
+                        <input placeholder="" matInput [matAutocomplete]="auto" [(ngModel)]="searchKey">
+                        <mat-icon matSuffix>search</mat-icon>
+                        <mat-autocomplete #auto="matAutocomplete" >
+                            <mat-option *ngFor="let option of options | searchKeyPipe : searchKey" [value]="searchKey"
+                                        [routerLink]="option.routerLink" [queryParams]="{key: option.key}">
+                                {{option.value}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </div>
+            </mat-button-toggle-group>
+        </nav>
         <router-outlet></router-outlet>
     </section>
 </ngx-electron-window>
