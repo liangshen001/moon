@@ -28,6 +28,9 @@ const routes: Routes = [{
     }, {
         path: 'system-settings',
         loadChildren: './modules/system-settings/system-settings.module#SystemSettingsModule'
+    }, {
+        path: 'update-remark',
+        loadChildren: './modules/update-remark/update-remark.module#UpdateRemarkModule'
     }]
 }];
 

@@ -13,6 +13,7 @@ import {entryComponents} from './components';
 import {FormsModule} from '@angular/forms';
 import {NgxElectronCoreModule} from '@ngx-electron/core';
 import {NgxElectronDataModule} from '@ngx-electron/data';
+import { UpdateRemarkModule } from './modules/update-remark/update-remark.module';
 
 @NgModule({
     imports: [
@@ -25,7 +26,8 @@ import {NgxElectronDataModule} from '@ngx-electron/data';
         MatInputModule,
         MainRoutingModule,
         StoreModule.forFeature('main', reducers),
-        EffectsModule.forFeature(effects)
+        EffectsModule.forFeature(effects),
+        UpdateRemarkModule
     ],
     declarations: [
         ...containers,

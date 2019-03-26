@@ -459,20 +459,14 @@ export class ContextMenuItemsService {
         return {
             label: '修改备注名称',
             type: 'normal',
-            click: () => this.dialog.open(UpdateRemarkComponent, {
-                width: '250px',
-                data: {remark: userGroup.remark, id: userGroup.id, chatType: ChatType.GROUP}
-            })
+            click: () => this.electronWindowService.openUpdateRemarkWindow(ChatType.GROUP, userGroup.id)
         };
     }
     private updateFriendRemarkMenuItem(userFriend: UserFriend) {
         return {
             label: '修改备注姓名',
             type: 'normal',
-            click: () => this.dialog.open(UpdateRemarkComponent, {
-                width: '250px',
-                data: {remark: userFriend.remark, id: userFriend.id, chatType: ChatType.GROUP}
-            })
+            click: () => this.electronWindowService.openUpdateRemarkWindow(ChatType.FRIEND, userFriend.id)
         };
     }
     private moveFriendToMenuItem(userFriend: UserFriend, friendGroupings: FriendGrouping[]) {

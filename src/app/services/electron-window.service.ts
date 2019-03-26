@@ -17,13 +17,14 @@ import {
     getAllGroupSystemMessages,
     getAllUserFriends,
     getAllUsers,
+    getAllUserGroups,
     getUserConfig
 } from '../modules/main/reducers';
 import {filter, map, take} from 'rxjs/operators';
 import {getUser} from '../reducers';
 import {of} from 'rxjs';
 import {LoadUserFriendsSuccess} from '../modules/main/actions/user-friend.actions';
-import {LoadUsers, LoadUsersSuccess} from '../modules/main/actions/user.action';
+import {LoadUsersSuccess} from '../modules/main/actions/user.action';
 import {LoadFriendGroupingsSuccess} from '../modules/main/actions/friend-grouping.action';
 import {LoadFriendMessagesSuccess} from '../modules/main/actions/friend-message.actions';
 import {LoadGroupsSuccess} from '../modules/main/actions/group.actions';
@@ -31,6 +32,7 @@ import {LoadGroupMessagesSuccess} from '../modules/main/actions/group-message.ac
 import {LoadFriendValidationSuccess} from '../modules/main/actions/friend-validation.actions';
 import {LoadGroupSystemMessagesSuccess} from '../modules/main/actions/group-system-message.actions';
 import {UpdateConversation} from '../modules/main/actions/conversation.actions';
+import {LoadUserGroupsSuccess} from '../modules/main/actions/user-group.action';
 
 @Injectable({
     providedIn: 'root'
@@ -283,6 +285,31 @@ export class ElectronWindowService {
                     take(1),
                     map(userConfig => new LoadUserConfigSuccess(userConfig))
                 )
+            ]
+        });
+    }
+
+    openUpdateRemarkWindow(chatType: ChatType, id: number) {
+        this.electronStoreService.openPage(`update-remark/${chatType}/${id}`, {
+            width: 400,
+            height: 300,
+            modal: true
+        }, {
+            key: 'update-remark',
+            parent: {
+                winKey: 'home'
+            },
+            actions: [
+                chatType === ChatType.FRIEND ?
+                    this.store$.pipe(
+                        select(getAllUserFriends),
+                        take(1),
+                        map(userFriends => new LoadUserFriendsSuccess(userFriends))
+                    ) : this.store$.pipe(
+                        select(getAllUserGroups),
+                        take(1),
+                        map(userGroups => new LoadUserGroupsSuccess(userGroups))
+                    )
             ]
         });
     }
