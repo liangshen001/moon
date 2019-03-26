@@ -1,0 +1,14 @@
+<div class="content">
+    <div>
+        <span>请输入备注</span>
+        <span *ngIf="chatType === 0">姓名</span>
+        <span *ngIf="chatType === 1">名称</span>
+    </div>
+    <mat-form-field>
+        <input type="text" matInput [(ngModel)]="remark" title="">
+    </mat-form-field>
+</div>
+<footer>
+    <button mat-button (click)="cancel()">取消</button>
+    <button mat-button (click)="confirm()">确定</button>
+</footer>
