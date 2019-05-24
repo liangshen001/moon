@@ -1,5 +1,9 @@
 <div class="content">
-    <div>请输入备注<span *ngIf="chatType === 0">姓名</span><span *ngIf="chatType === 1">名称</span></div>
+    <div>
+        <span>请输入备注</span>
+        <span *ngIf="chatType === 0">姓名</span>
+        <span *ngIf="chatType === 1">名称</span>
+    </div>
     <mat-form-field>
         <input type="text" matInput [(ngModel)]="remark">
     </mat-form-field>
