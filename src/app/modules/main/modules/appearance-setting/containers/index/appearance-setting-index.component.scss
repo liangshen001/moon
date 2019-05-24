@@ -1,26 +1,21 @@
-
-.content {
-  position: absolute;
-  top: 36px;
-  bottom: 0;
-  width: 100%;
-  nav {
-    height: 50px;
-    background: #EDEEEE;
-    display: flex;
-    align-items: center;
-    color: #878787;
-  }
-  section {
-    position: absolute;
-    padding: 5px;
-    box-sizing: border-box;
-    top: 50px;
-    bottom: 0;
-    width: 100%;
-    background: white;
-  }
+section {
+  flex: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
 }
-.actived-btn {
-  color: #278CDE;
+
+mat-button-toggle-group {
+  height: 50px;
+  min-height: 50px;
+  background: #edeeee;
+}
+
+mat-button-toggle {
+  background: #edeeee;
+}
+
+.mat-button-toggle-checked {
+  background: #edeeee;
+  color: #1177b6 !important;
 }

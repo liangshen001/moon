@@ -1,28 +1,23 @@
-<ng-template #titleTemp>
-    <span style="color: white">{{'main.appearance-setting.title' | translate}}</span>
-</ng-template>
+
 <ngx-electron-window [showCloseBtn]="true"
                      [showMiniBtn]="true"
-                     [background]="(userConfig$ | async)?.background"
-                     [titleTemp]="titleTemp">
-
-    <div class="content">
-        <nav>
-            <button mat-button routerLink="/appearance-setting/skin-setting"
-                    [class.actived-btn]="activated('skin-setting')">
+                     [background]="(userConfig$ | async)?.background">
+    <header>
+        <span style="color: white">{{'main.appearance-setting.title' | translate}}</span>
+    </header>
+    <section>
+        <mat-button-toggle-group [value]="url">
+            <mat-button-toggle value="/appearance-setting/skin-setting"
+                               routerLink="/appearance-setting/skin-setting">
                 <mat-icon>palette</mat-icon>
                 <span>皮肤设置</span>
-            </button>
-            <!--<button mat-button>场景秀</button>-->
-            <button mat-button routerLink="/appearance-setting/colourful-bubble"
-                    [class.actived-btn]="activated('colourful-bubble')">
+            </mat-button-toggle>
+            <mat-button-toggle value="/appearance-setting/colourful-bubble"
+                               routerLink="/appearance-setting/colourful-bubble">
                 <mat-icon>chat_bubble</mat-icon>
                 <span>多彩气泡</span>
-            </button>
-            <!--<button mat-button>界面管理</button>-->
-        </nav>
-        <section>
-            <router-outlet></router-outlet>
-        </section>
-    </div>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+        <router-outlet></router-outlet>
+    </section>
 </ngx-electron-window>
