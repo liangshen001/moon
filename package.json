@@ -29,6 +29,7 @@
     "npm:scope:ngx-electron": "npm config set scope ngx-electron",
     "build:ngx-element-resizable": "ng build ngx-element-resizable",
     "build:ngx-row": "ng build ngx-row",
+    "build:@ngx-electron": "npm run build:@ngx-electron/core && npm run build:@ngx-electron/data && build:@ngx-electron/main && build:@ngx-electron/cli",
     "build:@ngx-electron/core": "ng build @ngx-electron/core",
     "build:@ngx-electron/data": "ng build @ngx-electron/data",
     "build:@ngx-electron/main": "tsc -p ./projects/ngx-electron/main && npm link ./projects/ngx-electron/main",
@@ -39,9 +40,9 @@
     "publish:ngx-element-resizable": "npm run build:ngx-element-resizable && npm publish dist/ngx-element-resizable",
     "publish:ngx-message-editor": "npm run build:ngx-message-editor && npm publish dist/ngx-message-editor",
     "publish:ngx-row": "npm run build:ngx-row && npm publish dist/ngx-row",
+    "publish:@ngx-electron/main": "npm run build:@ngx-electron/main && npm run npm:scope:ngx-electron && npm publish --access public projects/ngx-electron/main",
     "publish:@ngx-electron/core": "npm run build:@ngx-electron/core && npm run npm:scope:ngx-electron && npm publish --access public dist/ngx-electron/core",
     "publish:@ngx-electron/data": "npm run build:@ngx-electron/data && npm run npm:scope:ngx-electron && npm publish --access public dist/ngx-electron/data",
-    "publish:@ngx-electron/main": "npm run build:@ngx-electron/main && npm run npm:scope:ngx-electron && npm publish --access public projects/ngx-electron/main",
     "publish:@ngx-electron/cli": "npm run build:@ngx-electron/cli && npm run npm:scope:ngx-electron && npm publish --access public projects/ngx-electron/cli"
   },
   "peerDependencies": {},
