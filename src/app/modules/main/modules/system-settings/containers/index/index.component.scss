@@ -5,10 +5,14 @@ section {
     flex-direction: column;
 }
 
-mat-button-toggle-group {
+nav {
     height: 50px;
     min-height: 50px;
     background: #edeeee;
+    display: flex;
+}
+mat-button-toggle-group {
+    flex: auto;
 }
 
 mat-button-toggle {
@@ -18,4 +22,9 @@ mat-button-toggle {
 .mat-button-toggle-checked {
     background: #edeeee;
     color: #1177b6 !important;
+}
+.search-key-container {
+    flex: auto;
+    text-align: right;
+    padding-right: 40px;
 }

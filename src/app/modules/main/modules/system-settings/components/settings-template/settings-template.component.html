@@ -1,7 +1,8 @@
 <mat-button-toggle-group [(value)]="selectTitle">
     <mat-button-toggle *ngFor="let settingsItem of settingsItems"
                        [value]="settingsItem.title"
-                       (click)="clickTitle(settingsItem.title)">
+                       routerLink="./"
+                       [queryParams]="{key: settingsItem.title}">
         {{settingsItem.title}}
     </mat-button-toggle>
 </mat-button-toggle-group>

@@ -4,7 +4,8 @@ import {UserConfig} from '../../../../models/user-config';
 import {select, Store} from '@ngrx/store';
 import {getUserConfig} from '../../../../reducers';
 import {ActivatedRoute, Router} from '@angular/router';
-import {MatButtonToggleGroup} from '@angular/material';
+import {searchKeys} from '../../models/search-keys';
+import {map} from 'rxjs/operators';
 
 @Component({
     selector: 'app-index',
@@ -15,14 +16,31 @@ export class IndexComponent implements OnInit {
 
     userConfig$: Observable<UserConfig>;
 
-    url: string;
+    path: string;
+
+    searchKey: string;
+
+    options = searchKeys;
+
+    routerKey = {
+        'permission-settings': '',
+        'security-settings': '',
+        'basic-settings': ''
+    };
 
     constructor(private store$: Store<any>,
-                private router: Router) {
+                private activatedRoute: ActivatedRoute) {
     }
 
     ngOnInit() {
-        this.url = this.router.url;
+        this.activatedRoute.queryParams.pipe(
+            map(params => params.key)
+        ).subscribe(key => {
+            this.routerKey[this.activatedRoute.snapshot.children[0].routeConfig.path] = key;
+            console.log(this.routerKey);
+        });
+
+        this.path = this.activatedRoute.snapshot.children[0].routeConfig.path;
         this.userConfig$ = this.store$.pipe(
             select(getUserConfig)
         );

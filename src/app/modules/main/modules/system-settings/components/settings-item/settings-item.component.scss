@@ -4,6 +4,15 @@
     padding-top: 10px;
 }
 
+/deep/ mat-radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/deep/ mat-radio-button {
+    margin-top: 10px;
+}
+
 .label-div {
     display: flex;
     justify-content: center;

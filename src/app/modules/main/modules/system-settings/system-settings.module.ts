@@ -7,9 +7,10 @@ import {BasicSettingsComponent} from './containers/basic-settings/basic-settings
 import {SecuritySettingsComponent} from './containers/security-settings/security-settings.component';
 import {PermissionSettingsComponent} from './containers/permission-settings/permission-settings.component';
 import {
-    MatButtonModule, MatButtonToggleModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
     MatCheckboxModule,
-    MatCommonModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
@@ -19,11 +20,22 @@ import {NgxElectronCoreModule} from '@ngx-electron/core';
 import {NgxElectronDataModule} from '@ngx-electron/data';
 import {SettingsTemplateComponent} from './components/settings-template/settings-template.component';
 import {SettingsItemComponent} from './components/settings-item/settings-item.component';
+import {FormsModule} from '@angular/forms';
+import { SearchKeyPipePipe } from './pipes/search-key-pipe.pipe';
 
 @NgModule({
-    declarations: [IndexComponent, BasicSettingsComponent, SecuritySettingsComponent, PermissionSettingsComponent, SettingsTemplateComponent, SettingsItemComponent],
+    declarations: [
+        IndexComponent,
+        BasicSettingsComponent,
+        SecuritySettingsComponent,
+        PermissionSettingsComponent,
+        SettingsTemplateComponent,
+        SettingsItemComponent,
+        SearchKeyPipePipe
+    ],
     imports: [
         CommonModule,
+        FormsModule,
         SystemSettingsRoutingModule,
 
         NgxElectronCoreModule,
@@ -35,7 +47,8 @@ import {SettingsItemComponent} from './components/settings-item/settings-item.co
         MatFormFieldModule,
         MatInputModule,
         MatButtonToggleModule,
-        MatSelectModule
+        MatSelectModule,
+        MatAutocompleteModule
     ]
 })
 export class SystemSettingsModule {

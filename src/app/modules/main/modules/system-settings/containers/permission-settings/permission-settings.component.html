@@ -1,1 +1,38 @@
-<app-settings-template></app-settings-template>
+<app-settings-template>
+    <app-settings-item title="个人资料">
+        <p>您可以设置谁可以查看您的个人资料。</p>
+        <p>
+            <button mat-stroked-button>权限设置</button>
+        </p>
+    </app-settings-item>
+    <app-settings-item title="防骚扰">
+        <p>请选择允许别人查找到您的方式：</p>
+        <p>
+            <mat-checkbox>通过查找视频用户列表找到我</mat-checkbox>
+        </p>
+        <p>
+            <mat-checkbox>只能通过账号或昵称找到我</mat-checkbox>
+        </p>
+        <p>
+            <mat-checkbox>不允许将我推荐给可能认识的人，同时也不向我推荐 可能认识的人</mat-checkbox>
+        </p>
+        <p>请选择适合您的难方式：</p>
+        <p>
+            <mat-radio-group>
+                <mat-radio-button>允许任何人</mat-radio-button>
+                <mat-radio-button>需要难信息</mat-radio-button>
+                <mat-radio-button>需要正确回答问题</mat-radio-button>
+                <mat-radio-button>需要回答问题并由我确认</mat-radio-button>
+            </mat-radio-group>
+        </p>
+    </app-settings-item>
+    <app-settings-item title="临时会话">
+        <p>
+            <mat-checkbox>不接收任何临时会话消息</mat-checkbox>
+        </p>
+        <p>
+            <button mat-stroked-button>屏蔽联系人管理</button>
+            <button mat-stroked-button>屏蔽会话管理</button>
+        </p>
+    </app-settings-item>
+</app-settings-template>

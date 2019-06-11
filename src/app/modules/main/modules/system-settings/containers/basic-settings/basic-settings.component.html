@@ -1,22 +1,36 @@
 <app-settings-template>
     <app-settings-item title="登录">
-        <mat-checkbox>开机时自动启动moon</mat-checkbox>
-        <mat-checkbox>启动moon时为我自动登录</mat-checkbox>
-        <mat-checkbox>总是打开登录提示</mat-checkbox>
+        <p>
+            <mat-checkbox>开机时自动启动moon</mat-checkbox>
+        </p>
+        <p>
+            <mat-checkbox>启动moon时为我自动登录</mat-checkbox>
+        </p>
+        <p>
+            <mat-checkbox>总是打开登录提示</mat-checkbox>
+        </p>
     </app-settings-item>
     <app-settings-item title="主面板">
-        <mat-checkbox>始终保持在其它窗口前端</mat-checkbox>
-        <mat-checkbox>停靠在桌面边缘时自动隐藏</mat-checkbox>
-        <mat-checkbox>在任务栏通知区域显示moon图标</mat-checkbox>
-        <span>关闭主面板时：</span>
-        <mat-radio-group>
-            <mat-radio-button>隐藏到任务栏通知区域，不退出程序</mat-radio-button>
-            <mat-radio-button>退出程序</mat-radio-button>
-        </mat-radio-group>
+        <p>
+            <mat-checkbox>始终保持在其它窗口前端</mat-checkbox>
+        </p>
+        <p>
+            <mat-checkbox>停靠在桌面边缘时自动隐藏</mat-checkbox>
+        </p>
+        <p>
+            <mat-checkbox>在任务栏通知区域显示moon图标</mat-checkbox>
+        </p>
+        <p>关闭主面板时：</p>
+        <p>
+            <mat-radio-group>
+                <mat-radio-button>隐藏到任务栏通知区域，不退出程序</mat-radio-button>
+                <mat-radio-button>退出程序</mat-radio-button>
+            </mat-radio-group>
+        </p>
         <!--界面-->
     </app-settings-item>
     <app-settings-item title="状态">
-        <span>
+        <p>
             <span>登录后状态为：</span>
             <mat-form-field>
                 <mat-select>
@@ -27,18 +41,22 @@
                     <mat-option value="4">隐身</mat-option>
                 </mat-select>
             </mat-form-field>
-        </span>
-        <mat-checkbox>离开、忙碌、请勿打扰时自动回复（100字以内）</mat-checkbox>
-        <span>
+        </p>
+        <p>
+            <mat-checkbox>离开、忙碌、请勿打扰时自动回复（100字以内）</mat-checkbox>
+        </p>
+        <p>
             <button mat-stroked-button>自动回复设置</button>
-        </span>
+        </p>
     </app-settings-item>
     <app-settings-item title="会话窗口">
-        <mat-checkbox>允许接收窗口抖动</mat-checkbox>
+        <p>
+            <mat-checkbox>允许接收窗口抖动</mat-checkbox>
+        </p>
     </app-settings-item>
     <app-settings-item title="提醒">
-        <span>好友上线提醒</span>
-        <span>
+        <p>好友上线提醒</p>
+        <p>
             <mat-form-field>
                 <mat-select>
                     <mat-option value="0">关闭好友上线提醒</mat-option>
@@ -46,21 +64,25 @@
                     <mat-option value="2">以下好友上线提醒</mat-option>
                 </mat-select>
             </mat-form-field>
-        </span>
+        </p>
     </app-settings-item>
-    <app-settings-item title="声音">
-        <mat-checkbox>关闭所有声音</mat-checkbox>
-        <span>
+    <app-settings-item title="声音声音">
+        <p>
+            <mat-checkbox>关闭所有声音</mat-checkbox>
+        </p>
+        <p>
             <button mat-stroked-button>设置提示音</button>
-        </span>
+        </p>
     </app-settings-item>
     <app-settings-item title="软件更新">
-        <span>你可以选择本台计算机上moon的更新方式</span>
-        <mat-radio-group>
-            <mat-radio-button>有更新时自动为我安装（推荐）</mat-radio-button>
-            <span>当moon有更新时，智能选择最佳的软件更新文案，自动完成更新的下载与安装、省心省力。</span>
-            <mat-radio-button>有更新时不要安装但提醒我</mat-radio-button>
-            <span>此方式不影响安全补丁等重要更新的自动安装。</span>
-        </mat-radio-group>
+        <p>你可以选择本台计算机上moon的更新方式</p>
+        <p>
+            <mat-radio-group>
+                <mat-radio-button>有更新时自动为我安装（推荐）</mat-radio-button>
+                <span>当moon有更新时，智能选择最佳的软件更新文案，自动完成更新的下载与安装、省心省力。</span>
+                <mat-radio-button>有更新时不要安装但提醒我</mat-radio-button>
+                <span>此方式不影响安全补丁等重要更新的自动安装。</span>
+            </mat-radio-group>
+        </p>
     </app-settings-item>
 </app-settings-template>

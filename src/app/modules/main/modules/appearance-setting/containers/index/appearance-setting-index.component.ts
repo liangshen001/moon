@@ -17,12 +17,14 @@ export class AppearanceSettingIndexComponent implements OnInit {
 
     userConfig$: Observable<UserConfig>;
 
+    url: string;
+
     constructor(private store$: Store<any>,
-                private router: Router,
-                private activatedRoute: ActivatedRoute) {
+                private router: Router) {
     }
 
     ngOnInit() {
+        this.url = this.router.url;
         this.userConfig$ = this.store$.pipe(
             select(getUserConfig)
         );
@@ -31,9 +33,5 @@ export class AppearanceSettingIndexComponent implements OnInit {
             take(1),
             filter(init => !init)
         ).subscribe(() => this.store$.dispatch(new LoadSkins()));
-    }
-
-    activated(path: string) {
-        return this.activatedRoute.firstChild.routeConfig.path === path;
     }
 }
