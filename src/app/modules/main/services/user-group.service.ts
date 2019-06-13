@@ -1,29 +1,22 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../../environments/environment';
-import {CommonResponseModel} from '../../../models/common-response.model';
-import {UserGroup} from '../models/user-group.model';
 import {GroupStatus} from '../enums/group-status';
-import {User} from '../../../models/user.model';
-import {map} from 'rxjs/operators';
+import {HttpService} from '../../../services/http.service';
 
 @Injectable()
 export class UserGroupService {
 
-    url = environment.getHttpUrl(`v1/userGroups`);
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpService) {}
 
-    post(params: {
+    post(body: {
         inviteeIds: number[],
         groupId: number
     }) {
-        return this.http.post<CommonResponseModel<UserGroup[]>>(this.url, {
-            params,
-            withCredentials: true
-        }).pipe(
-            map(res => res.data)
-        );
+        return this.http.postOfUser({
+            apiBase: 'v1',
+            resourceName: 'userGroups',
+            body
+        });
     }
 
     loadUserGroups(groupId?: number) {
@@ -31,17 +24,22 @@ export class UserGroupService {
         if (groupId) {
             params['groupId'] = `${groupId}`;
         }
-        return this.http.get<CommonResponseModel<UserGroup[]>>(this.url, {
-            params,
-            withCredentials: true
+        return this.http.getOfUser({
+            apiBase: 'v1',
+            resourceName: 'userGroups',
+            params
         });
     }
 
-    updateUserGroup(id: number, changes: {
+    updateUserGroup(resourceId: number, body: {
         groupStatus?: GroupStatus;
         groupGroupingId?: number;
     }) {
-        return this.http.patch<CommonResponseModel<UserGroup>>(`${this.url}/${id}`,
-            changes, {withCredentials: true});
+        return this.http.patchOfUser({
+            apiBase: 'v1',
+            resourceName: 'userGroups',
+            resourceId,
+            body
+        });
     }
 }

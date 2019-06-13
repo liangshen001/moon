@@ -4,16 +4,19 @@ import {catchError, map} from 'rxjs/operators';
 import {environment} from '../../../../environments/environment';
 import {GroupSystemMessage} from '../models/group-system-message';
 import {CommonResponseModel} from '../../../models/common-response.model';
+import {HttpService} from '../../../services/http.service';
 
 @Injectable()
 export class GroupSystemMessageService {
-    resources = environment.getHttpUrl('v1/groupSystemMessages');
 
-    constructor(private httpClient: HttpClient) {
+    constructor(private httpClient: HttpClient,
+                private http: HttpService) {
     }
 
     loadGroupSystemMessages() {
-        return this.httpClient.get<CommonResponseModel<GroupSystemMessage[]>>(this.resources,
-            {withCredentials: true}).pipe(map(res => res.data));
+        return this.http.getOfUser({
+            apiBase: 'v1',
+            resourceName: 'groupSystemMessages'
+        });
     }
 }

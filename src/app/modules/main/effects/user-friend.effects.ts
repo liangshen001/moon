@@ -45,7 +45,7 @@ export class UserFriendEffects {
     addAsFriends$ = this.actions$.pipe(
         ofType<AddAsFriends>(UserFriendActionTypes.AddAsFriends),
         map(action => action.payload),
-        switchMap(({friendId, friendGroupingId}) => this.userFriendService.addAsFriends(friendId, friendGroupingId)),
+        switchMap(body => this.userFriendService.addAsFriends(body)),
         tap(userFriend => this.electronStoreService.dispatch(new DeleteUserFriendSuccess(userFriend.id))),
     );
 

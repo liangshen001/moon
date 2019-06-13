@@ -1,0 +1,197 @@
+export const searchKeys = [{
+    routerLink: '/system-settings/basic-settings',
+    key: '登录',
+    value: '登录'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '登录',
+    value: '开机时自动启动moon'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '登录',
+    value: '启动moon时为我自动登录'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '登录',
+    value: '总是打开登录提示'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '主面板',
+    value: '主面板'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '主面板',
+    value: '始终保持在其它窗口前端'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '主面板',
+    value: '停靠在桌面边缘时自动隐藏'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '主面板',
+    value: '在任务栏通知区域显示moon图标'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '主面板',
+    value: '隐藏到任务栏通知区域，不退出程序'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '主面板',
+    value: '退出程序'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '状态',
+    value: '登录后状态'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '状态',
+    value: '状态'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '状态',
+    value: '离开、忙碌、请勿打扰时自动回复（100字以内）'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '状态',
+    value: '自动回复设置'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '会话窗口',
+    value: '会话窗口'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '会话窗口',
+    value: '允许接收窗口抖动'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '提醒',
+    value: '提醒'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '提醒',
+    value: '好友上线提醒'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '声音',
+    value: '声音'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '声音',
+    value: '关闭所有声音'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '声音',
+    value: '设置提示音'
+}, {
+    routerLink: '/system-settings/basic-settings',
+    key: '软件更新',
+    value: '软件更新'
+}, {
+    routerLink: '/system-settings/permission-settings',
+    key: '个人资料',
+    value: '个人资料'
+}, {
+    routerLink: '/system-settings/permission-settings',
+    key: '个人资料',
+    value: '权限设置'
+}, {
+    routerLink: '/system-settings/permission-settings',
+    key: '防骚扰',
+    value: '防骚扰'
+}, {
+    routerLink: '/system-settings/permission-settings',
+    key: '临时会话',
+    value: '临时会话'
+}, {
+    routerLink: '/system-settings/permission-settings',
+    key: '临时会话',
+    value: '屏蔽联系人管理'
+}, {
+    routerLink: '/system-settings/permission-settings',
+    key: '临时会话',
+    value: '屏蔽会话管理'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '密码',
+    value: '密码'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '密码',
+    value: '取消记住密码'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '密码',
+    value: '修改密码'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '密码',
+    value: '申请密码保护'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '密码',
+    value: '管理独立密码'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: 'moon锁',
+    value: 'moon锁'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: 'moon锁',
+    value: '使用moon密码解锁moon锁'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: 'moon锁',
+    value: '使用独立密码解锁moon锁'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: 'moon锁',
+    value: '更改热键'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: 'moon锁',
+    value: '自动锁定设置'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '消息记录',
+    value: '消息记录'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '消息记录',
+    value: '打开消息管理器'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '消息记录',
+    value: '删除消息记录'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '消息记录',
+    value: '登录moon时同步最近聊天记录'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '消息记录',
+    value: '仅查看本机消息记录'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '消息记录',
+    value: '退出moon时自动删除所有消息记录'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '消息记录',
+    value: '启用消息记录加密'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '安全更新',
+    value: '有安全更新时自动为我安装，无需提醒'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '安全更新',
+    value: '有安全更新酌，不自动安装'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '安全更新',
+    value: '安全更新'
+}, {
+    routerLink: '/system-settings/security-settings',
+    key: '文件传输',
+    value: '文件传输'
+}];

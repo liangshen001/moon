@@ -13,11 +13,11 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {environment} from '../environments/environment';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {InMemoryDateService} from './in-memory-date.service';
 import {effects} from './effects';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgxElectronCoreModule, NgxElectronService} from '@ngx-electron/core';
 import {NgxElectronDataModule} from '@ngx-electron/data';
+import {InMemoryDataOverrideService} from './in-memory-data-override.service';
 
 // 加载翻译文件 需要判断当前是否以服务的方式加载页面, 使用angular-in-memory-web-api注意处理一下请求
 export function HttpLoaderFactory(http: HttpClient, electronService: NgxElectronService) {
@@ -52,7 +52,7 @@ export function HttpLoaderFactory(http: HttpClient, electronService: NgxElectron
             }
         }),
         ...((environment.production) ? [] : [
-            InMemoryWebApiModule.forRoot(InMemoryDateService, {
+            InMemoryWebApiModule.forRoot(InMemoryDataOverrideService, {
                 delay: 0,
                 dataEncapsulation: true
             })
