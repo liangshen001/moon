@@ -24,7 +24,6 @@ export class UserGroupEffects {
         ofType<LoadUserGroups>(UserGroupActionTypes.LoadUserGroups),
         map(action => action.payload),
         switchMap(groupId => this.userGroupService.loadUserGroups(groupId)),
-        map(res => res.data),
         map(userGroups => new LoadUserGroupsSuccess(userGroups))
     );
 
@@ -40,8 +39,7 @@ export class UserGroupEffects {
     updateUserGroup$ = this.actions$.pipe(
         ofType<UpdateUserGroup>(UserGroupActionTypes.UpdateUserGroup),
         map(action => action.payload),
-        switchMap(({id, changes}) => this.userGroupService.updateUserGroup(id, changes)),
-        map(res => res.data)
+        switchMap(({id, changes}) => this.userGroupService.updateUserGroup(id, changes))
     );
 
     @Effect({dispatch: false})
@@ -50,8 +48,7 @@ export class UserGroupEffects {
         map(action => action.payload),
         switchMap(({id, groupGroupingId}) => this.userGroupService.updateUserGroup(id, {
             groupGroupingId
-        })),
-        map(res => res.data)
+        }))
     );
 
     @Effect()

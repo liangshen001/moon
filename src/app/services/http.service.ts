@@ -48,7 +48,7 @@ export class HttpService {
         );
     }
 
-    getOfUser<R>({apiBase, resourceName, params, resourceId}: {
+    getOfUser<R = any>({apiBase, resourceName, params, resourceId}: {
         apiBase: string;
         resourceName: string;
         params?: HttpParams | {

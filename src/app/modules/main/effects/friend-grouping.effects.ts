@@ -30,13 +30,13 @@ export class FriendGroupingEffects {
         map<FriendGrouping[], LoadFriendGroupingsSuccess>(friendGroups => new LoadFriendGroupingsSuccess(friendGroups)),
     );
 
-    @Effect({dispatch: false})
+    @Effect({dispatch: true})
     renameFriendGrouping$ = this.actions$.pipe(
         ofType<RenameFriendGrouping>(FriendGroupingActionTypes.RenameFriendGrouping),
         map(action => action.payload),
         switchMap(({id, name}) => this.friendGroupingService.updateFriendGrouping(id, {name})),
         // map(res => res.data),
-        // map(friendGroup => new RenameFriendGroupingSuccess(friendGroup))
+        map(friendGroup => new RenameFriendGroupingSuccess(friendGroup))
     );
 
     @Effect({dispatch: false})

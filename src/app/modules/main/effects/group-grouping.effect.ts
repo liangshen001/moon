@@ -22,7 +22,6 @@ export class GroupGroupingEffect {
     loadGroupGroupings$ = this.actions$.pipe(
         ofType<LoadGroupGroupings>(GroupGroupingActionTypes.LoadGroupGroupings),
         switchMap(() => this.groupGroupingService.findGroupGroupings()),
-        map(res => res.data),
         map(groupGroupings => new LoadGroupGroupingsSuccess(groupGroupings))
     );
 
