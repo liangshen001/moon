@@ -1,40 +1,45 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {CommonResponseModel} from '../../../models/common-response.model';
-import {map} from 'rxjs/operators';
-import {environment} from '../../../../environments/environment';
-import {UserFriend} from '../models/user-friend.model';
+import {HttpService} from '../../../services/http.service';
 
 @Injectable()
 export class UserFriendService {
-    constructor(private http: HttpClient) {}
-    urlResources = environment.getHttpUrl('v1/userFriends');
+    constructor(private http: HttpService) {}
 
-
-    addAsFriends(friendId: number, friendGroupingId: number) {
-        return this.http.post<CommonResponseModel<UserFriend>>(this.urlResources, {
-            friendId, friendGroupingId
-        }, {withCredentials: true}).pipe(map(res => res.data));
+    addAsFriends(body: {friendId: number, friendGroupingId: number}) {
+        return this.http.postOfUser({
+            apiBase: 'v1',
+            resourceName: 'userFriends',
+            body
+        });
     }
 
     loadUserFriends() {
-        return this.http.get<CommonResponseModel<UserFriend[]>>(this.urlResources, {withCredentials: true})
-            .pipe(map(res => res.data));
+        return this.http.getOfUser({
+            apiBase: 'v1',
+            resourceName: 'userFriends'
+        });
     }
 
-    deleteFriends(id: number) {
-        return this.http.delete<CommonResponseModel<UserFriend>>(`${this.urlResources}/${id}`, {withCredentials: true})
-            .pipe(map(res => res.data));
+    deleteFriends(resourceId: number) {
+        return this.http.deleteOfUser({
+            apiBase: 'v1',
+            resourceName: 'userFriends',
+            resourceId
+        });
     }
 
-    updateUserFriend(id: number, body: {
+    updateUserFriend(resourceId: number, body: {
         shield?: boolean,
         stealth?: boolean,
         friendGroupingId?: number,
         visible?: boolean,
         remark?: string
     }) {
-        return this.http.patch<CommonResponseModel<UserFriend>>(`${this.urlResources}/${id}`, body,
-            {withCredentials: true});
+        return this.http.patchOfUser({
+            apiBase: 'v1',
+            resourceName: 'userFriends',
+            resourceId,
+            body
+        });
     }
 }

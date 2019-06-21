@@ -8,19 +8,24 @@ import {ListShowType} from '../enums/list-show-type';
 import {FriendNameShowType} from '../enums/friend-name-show-type';
 import {FriendListSortType} from '../enums/friend-list-sort-type';
 import {ImgShowType} from '../enums/img-show-type';
+import {HttpService} from '../../../services/http.service';
 
 @Injectable()
 export class UserConfigService {
     url = environment.getHttpUrl('v1/userConfigs');
-    constructor(private httpClient: HttpClient) {
+    constructor(private httpClient: HttpClient,
+                private http: HttpService) {
     }
 
-    loadUserConfig(userConfigId: number) {
-        return this.httpClient.get<CommonResponseModel<UserConfig>>(`${this.url}/${userConfigId}`, {withCredentials: true})
-            .pipe(map(res => res.data));
+    loadUserConfig(resourceId: number) {
+        return this.http.getOfUser({
+            apiBase: 'v1',
+            resourceName: 'userConfigs',
+            resourceId
+        });
     }
 
-    updateUserConfig(userConfigId: number, param: {
+    updateUserConfig(resourceId: number, body: {
         friendImgShowType?: ImgShowType;
         friendSelectedShowBigImg?: boolean;
         friendNameShowType?: FriendNameShowType;
@@ -37,7 +42,11 @@ export class UserConfigService {
         turnOffAllSounds?: boolean;
         closeHeadFlicker?: boolean;
     }) {
-        return this.httpClient.patch<CommonResponseModel<UserConfig>>(`${this.url}/${userConfigId}`, param,
-            {withCredentials: true}).pipe(map(res => res.data));
+        return this.http.patchOfUser({
+            apiBase: 'v1',
+            resourceName: 'userConfigs',
+            resourceId,
+            body
+        });
     }
 }

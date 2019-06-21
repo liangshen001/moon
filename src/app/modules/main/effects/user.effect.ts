@@ -12,8 +12,7 @@ export class UserEffect {
     loadUsersSuccess$ = this.actions$.pipe(
         ofType<LoadUsers>(UserActionTypes.LoadUsers),
         map(action => action.payload),
-        switchMap(groupId => this.userService.loadUsers(groupId)),
-        map(res => res.data),
+        switchMap(groupId => this.userService.loadUsers()),
         map(users => new LoadUsersSuccess(users))
     );
 }

@@ -5,41 +5,52 @@ import {environment} from '../../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/internal/Observable';
 import {map} from 'rxjs/operators';
+import {HttpService} from '../../../services/http.service';
 
 @Injectable()
 export class FriendGroupingService {
 
     url = environment.getHttpUrl('v1/friendGroupings');
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpService) {}
 
     /**
      * 查找当前用户好友分组列表
-     * @returns {Observable<FriendGrouping[]>}
      */
     findFriendGroupings() {
-        return this.http.get<CommonResponseModel<FriendGrouping[]>>(this.url, {withCredentials: true})
-            .pipe(map(res => res.data));
+        return this.http.getOfUser({
+            apiBase: 'v1',
+            resourceName: 'friendGroupings'
+        });
     }
 
     addFriendGrouping(name: string) {
-        return this.http.post<CommonResponseModel<FriendGrouping>>(this.url, {
-            name
-        }, {withCredentials: true}).pipe(map(res => res.data));
+        return this.http.postOfUser({
+            apiBase: 'v1',
+            resourceName: 'friendGroupings',
+            body: {name}
+        });
     }
 
-    deleteFriendGrouping(id: number) {
-        return this.http.delete<CommonResponseModel<FriendGrouping>>(`${this.url}/${id}`, {withCredentials: true})
-            .pipe(map(res => res.data));
+    deleteFriendGrouping(resourceId: number) {
+        return this.http.deleteOfUser({
+            apiBase: 'v1',
+            resourceName: 'friendGroupings',
+            resourceId
+        });
     }
 
-    updateFriendGrouping(id: number, changes: {
+    updateFriendGrouping(resourceId: number, body: {
         sort?: number,
         name?: string,
         visible?: boolean,
         stealth?: boolean
     }) {
-        return this.http.patch<CommonResponseModel<FriendGrouping>>(`${this.url}/${id}`,
-            changes, {withCredentials: true});
+        return this.http.patchOfUser({
+            apiBase: 'v1',
+            resourceName: 'friendGroupings',
+            resourceId,
+            body
+        });
     }
 }
